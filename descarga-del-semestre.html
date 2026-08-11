@@ -9,6 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style-v3.css">
+<style>
+  .lm-policy-field{display:flex; align-items:flex-start; gap:8px; margin-top:10px; margin-bottom:6px; font-size:13px; color:#5a6472; line-height:1.5;}
+  .lm-policy-field input{width:auto; margin-top:3px; flex-shrink:0;}
+</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG9KQ2PT5W"></script>
 <script>
@@ -149,8 +153,13 @@
       <!-- honeypot anti-spam, no tocar -->
       <input type="text" id="f_hp" class="lm-hp" tabindex="-1" autocomplete="off">
 
+      <label class="lm-policy-field" for="f_policy">
+        <input type="checkbox" id="f_policy" required>
+        <span>Acepto la <a href="politica-de-privacidad.html" target="_blank">Política de Privacidad</a> de Growth Path Academy y el tratamiento de mis datos personales. <span class="lm-req">*</span></span>
+      </label>
+
       <button type="submit" class="lm-btn-submit" id="btnSubmit">Recibir mi eBook gratis →</button>
-      <p class="lm-form-error" id="formError">Por favor completa nombre, correo y WhatsApp.</p>
+      <p class="lm-form-error" id="formError">Por favor completa nombre, correo y WhatsApp, y acepta la política de privacidad.</p>
       <p class="lm-privacy-note">Tus datos se usan solo para enviarte este recurso y contenido relacionado de Growth Path Academy. No compartimos tu información con terceros.</p>
     </form>
 
@@ -229,12 +238,13 @@ function handleSubmit(e){
   const codigoPais = document.getElementById('f_codigo').value;
   const empresa = document.getElementById('f_empresa').value.trim();
   const honeypot = document.getElementById('f_hp').value;
+  const policy = document.getElementById('f_policy').checked;
   const errorEl = document.getElementById('formError');
   const btn = document.getElementById('btnSubmit');
 
   if(honeypot){ return false; }
 
-  if(!nombre || !email || !celular){
+  if(!nombre || !email || !celular || !policy){
     errorEl.style.display = 'block';
     return false;
   }
@@ -252,7 +262,9 @@ function handleSubmit(e){
     pais: "",
     total: "",
     avg: "",
-    status: "eBook: El día que quiebra pero no destruye"
+    status: "eBook: El día que quiebra pero no destruye",
+    aceptoPolitica: "Sí",
+    fechaAceptacion: new Date().toISOString()
   };
 
   btn.disabled = true;
