@@ -1,1 +1,1084 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ============ SEO ============ -->
+<title>La Ruta TM® | El Sistema para Team Managers que Quieren Liderar con Criterio | Biblioteca BPO</title>
+<meta name="description" content="La Ruta TM: el sistema de 9 guías para Team Managers de BPO que quieren dejar de improvisar y empezar a liderar con piso operativo. Desde US$24,99. Garantía de 7 días.">
+<meta name="keywords" content="team manager bpo, liderazgo call center, capacitación team leader, gestión de equipos bpo, kpi contact center, biblioteca bpo, growth path academy, la ruta tm, formación supervisores call center">
+<meta property="og:title" content="La Ruta TM® | El Sistema para Team Managers de BPO">
+<meta property="og:description" content="9 guías operativas para liderar tu equipo con criterio, no con improvisación. Menos teoría. Más piso.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS
+========================================================= */
+:root{
+  --navy:#1B3A6B;
+  --navy-dark:#122A50;
+  --navy-deeper:#0D1F3D;
+  --teal:#007A78;
+  --teal-light:#00A19C;
+  --sky:#4FC3F7;
+  --gold:#C5A028;
+  --bg:#F6F8FA;
+  --white:#FFFFFF;
+  --ink:#12203A;
+  --ink-soft:#4C5A73;
+  --ink-faint:#8593A8;
+  --danger:#A83A2E;
+  --line:#E3E8EE;
+  --radius:14px;
+  --shadow-sm:0 2px 10px rgba(18,32,58,.06);
+  --shadow-md:0 10px 30px rgba(18,32,58,.10);
+  --shadow-lg:0 24px 60px rgba(13,31,61,.18);
+  --font-display:'Outfit',system-ui,sans-serif;
+  --font-body:'Outfit',system-ui,sans-serif;
+  --font-serif:'Fraunces',serif;
+  --maxw:1180px;
+  --pad:20px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;margin:0;letter-spacing:-0.01em;}
+section{position:relative;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:14px;
+}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--gold);display:inline-block;border-radius:2px;}
+.section-head{max-width:720px;margin:0 auto 44px;text-align:center;}
+.section-head h2{font-size:clamp(26px,4vw,38px);color:var(--navy-deeper);line-height:1.15;}
+.section-head p{color:var(--ink-soft);font-size:17px;margin-top:14px;}
+.pad{padding:76px 0;}
+.pad-sm{padding:56px 0;}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:4px;}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-display);font-weight:700;font-size:16px;
+  padding:17px 30px;border-radius:100px;border:none;cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  white-space:nowrap;
+}
+.btn:active{transform:scale(.97);}
+.btn-primary{
+  background:linear-gradient(135deg,var(--teal-light),var(--teal));
+  color:#fff;
+  box-shadow:0 10px 26px rgba(0,122,120,.35);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,122,120,.45);}
+.btn-ghost{
+  background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.5);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+.btn-dark-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line);}
+.btn-dark-ghost:hover{border-color:var(--navy);background:var(--bg);}
+.btn-block{width:100%;}
+.btn small{display:block;font-weight:500;font-size:12px;opacity:.85;}
+
+/* =========================================================
+   NAV
+========================================================= */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(13,31,61,.72);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:background .3s ease;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad);max-width:var(--maxw);margin:0 auto;}
+.nav-logo{font-family:var(--font-display);font-weight:800;color:#fff;font-size:17px;letter-spacing:-.02em;}
+.nav-logo span{color:var(--sky);}
+.nav-cta{padding:11px 20px;font-size:14px;}
+.nav-links{display:none;}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero{
+  background:radial-gradient(120% 140% at 15% -10%, #23477F 0%, var(--navy) 42%, var(--navy-deeper) 100%);
+  color:#fff;
+  padding:132px 0 90px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;inset:auto -20% -40% -20%;height:60%;
+  background:radial-gradient(closest-side, rgba(79,195,247,.18), transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:44px;align-items:center;position:relative;z-index:2;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;
+  margin-bottom:22px;color:var(--sky);
+}
+.hero h1{
+  font-size:clamp(30px,6.4vw,52px);
+  line-height:1.08;
+  color:#fff;
+  margin-bottom:20px;
+}
+.hero h1 em{
+  font-style:normal;color:var(--sky);
+}
+.hero p.sub{
+  font-size:clamp(16px,2.4vw,19px);
+  color:rgba(255,255,255,.78);
+  max-width:560px;
+  margin-bottom:32px;
+}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px;}
+.hero-trust{display:flex;flex-wrap:wrap;gap:22px;font-size:13px;color:rgba(255,255,255,.65);}
+.hero-trust div{display:flex;align-items:center;gap:8px;}
+.hero-trust svg{flex-shrink:0;}
+
+.hero-visual{position:relative;z-index:2;}
+.stack{
+  position:relative;
+  display:flex;justify-content:center;align-items:center;
+  height:340px;
+}
+.card-book{
+  position:absolute;width:180px;height:260px;border-radius:8px;
+  box-shadow:0 30px 60px rgba(0,0,0,.35);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:22px 18px;color:#fff;
+  font-family:var(--font-display);
+  background:linear-gradient(160deg,var(--navy) 0%, var(--navy-deeper) 100%);
+  border:1px solid rgba(255,255,255,.08);
+}
+.card-book.b2{transform:rotate(-9deg) translateX(-92px);background:linear-gradient(160deg,var(--teal-light),var(--teal));z-index:1;}
+.card-book.b3{transform:rotate(9deg) translateX(92px);background:linear-gradient(160deg,#2C5AA0,var(--navy));z-index:1;}
+.card-book.b1{z-index:2;transform:translateY(-6px);}
+.card-book .tag{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.card-book .title{font-size:15px;font-weight:700;line-height:1.25;}
+.card-book .num{font-size:11px;opacity:.7;}
+
+/* =========================================================
+   PROBLEM
+========================================================= */
+.problem{background:var(--white);}
+.problem-grid{display:grid;grid-template-columns:1fr;gap:32px;}
+.problem-list{display:grid;gap:16px;margin-top:34px;}
+.problem-item{
+  display:flex;gap:16px;align-items:flex-start;
+  background:var(--bg);border:1px solid var(--line);
+  border-radius:var(--radius);padding:20px 22px;
+}
+.problem-item .ico{
+  flex-shrink:0;width:38px;height:38px;border-radius:10px;
+  background:rgba(168,58,46,.10);color:var(--danger);
+  display:flex;align-items:center;justify-content:center;
+}
+.problem-item p{margin:0;color:var(--ink-soft);font-size:15.5px;}
+.problem-item strong{color:var(--ink);}
+.problem-cost{
+  margin-top:40px;padding:28px;border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--navy-deeper),var(--navy));color:#fff;
+  text-align:center;
+}
+.problem-cost p{margin:0;font-size:18px;line-height:1.5;}
+.problem-cost strong{color:var(--sky);}
+
+/* =========================================================
+   SOLUTION
+========================================================= */
+.solution{background:var(--bg);}
+.solution-inner{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;}
+.solution-copy p{color:var(--ink-soft);font-size:16.5px;margin-bottom:16px;}
+.solution-points{display:grid;gap:14px;margin-top:22px;}
+.solution-points .pt{display:flex;gap:12px;align-items:flex-start;}
+.solution-points .pt .dot{
+  flex-shrink:0;width:26px;height:26px;border-radius:50%;
+  background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:800;margin-top:2px;
+}
+.path-graphic{
+  background:var(--white);border:1px solid var(--line);border-radius:20px;
+  padding:34px 26px;box-shadow:var(--shadow-md);
+}
+.path-graphic .row{display:flex;align-items:center;gap:0;}
+.path-node{
+  flex-shrink:0;width:50px;height:50px;border-radius:50%;
+  background:var(--navy);color:#fff;font-family:var(--font-display);font-weight:800;
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+  border:3px solid var(--gold);
+}
+.path-line{flex:1;height:3px;background:linear-gradient(90deg,var(--navy),var(--teal));border-radius:3px;margin:0 6px;}
+.path-labels{display:flex;justify-content:space-between;margin-top:10px;font-size:11.5px;color:var(--ink-faint);font-weight:600;text-align:center;}
+.path-labels span{width:60px;}
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+.benefits{background:var(--white);}
+.benefit-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+.benefit-card{
+  border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;
+  background:var(--bg);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.benefit-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:transparent;}
+.benefit-card .ico{
+  width:46px;height:46px;border-radius:12px;
+  background:var(--navy);color:var(--sky);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+}
+.benefit-card h3{font-size:19px;color:var(--navy-deeper);margin-bottom:10px;}
+.benefit-card p{color:var(--ink-soft);font-size:15px;margin:0;}
+.benefit-card .result{
+  display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--teal);
+}
+
+/* =========================================================
+   INCLUDES
+========================================================= */
+.includes{background:var(--navy-deeper);color:#fff;}
+.includes .section-head h2,.includes .eyebrow{color:#fff;}
+.includes .eyebrow{color:var(--sky);}
+.includes .section-head p{color:rgba(255,255,255,.65);}
+.include-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+.include-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius);padding:24px;
+}
+.include-card .name{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.include-card h4{font-size:18px;margin-bottom:8px;}
+.include-card p{color:rgba(255,255,255,.68);font-size:14.5px;margin:0 0 12px;}
+.include-card .benefit-tag{
+  font-size:12.5px;color:var(--sky);font-weight:600;
+  border-top:1px solid rgba(255,255,255,.1);padding-top:12px;
+}
+
+/* =========================================================
+   HOW IT WORKS / MODULES
+========================================================= */
+.how{background:var(--bg);}
+.module-list{max-width:760px;margin:0 auto;}
+.module-item{
+  display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);
+}
+.module-item:last-child{border-bottom:none;}
+.module-num{
+  flex-shrink:0;width:44px;height:44px;border-radius:50%;
+  background:var(--white);border:2px solid var(--teal);color:var(--teal);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--font-display);
+}
+.module-body h4{font-size:16.5px;color:var(--navy-deeper);margin-bottom:4px;}
+.module-body p{margin:0;color:var(--ink-soft);font-size:14.5px;}
+.module-note{
+  max-width:760px;margin:26px auto 0;padding:16px 20px;
+  background:rgba(197,160,40,.09);border:1px dashed var(--gold);border-radius:10px;
+  font-size:13px;color:var(--ink-soft);
+}
+.result-banner{
+  max-width:760px;margin:28px auto 0;text-align:center;padding:22px;
+  background:linear-gradient(135deg,var(--teal),var(--teal-light));border-radius:var(--radius);color:#fff;
+}
+.result-banner strong{font-size:17px;}
+
+/* =========================================================
+   FOR WHO / NOT FOR WHO
+========================================================= */
+.audience{background:var(--white);}
+.audience-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+.audience-card{border-radius:var(--radius);padding:28px 24px;}
+.audience-card.yes{background:rgba(0,122,120,.06);border:1px solid rgba(0,122,120,.25);}
+.audience-card.no{background:rgba(168,58,46,.05);border:1px solid rgba(168,58,46,.2);}
+.audience-card h3{font-size:18px;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.audience-card.yes h3{color:var(--teal);}
+.audience-card.no h3{color:var(--danger);}
+.audience-card ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+.audience-card li{display:flex;gap:10px;font-size:15px;color:var(--ink-soft);align-items:flex-start;}
+.audience-card li svg{flex-shrink:0;margin-top:2px;}
+
+/* =========================================================
+   SOCIAL PROOF
+========================================================= */
+.proof{background:var(--bg);}
+.stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:44px;}
+.stat{text-align:center;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:24px 10px;}
+.stat .n{font-family:var(--font-display);font-weight:800;font-size:clamp(24px,5vw,32px);color:var(--navy);}
+.stat .l{font-size:12.5px;color:var(--ink-faint);font-weight:600;margin-top:4px;}
+.testi-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+.testi-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;position:relative;
+}
+.testi-card .quote-mark{font-family:var(--font-serif);font-size:46px;color:var(--gold);line-height:0.4;display:block;margin-bottom:10px;}
+.testi-card p{color:var(--ink-soft);font-size:15px;font-style:italic;}
+.testi-who{display:flex;align-items:center;gap:12px;margin-top:16px;}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;}
+.testi-name{font-size:14px;font-weight:700;color:var(--ink);}
+.testi-role{font-size:12.5px;color:var(--ink-faint);}
+.logos-note{
+  text-align:center;margin-top:40px;padding:24px;border-top:1px solid var(--line);
+}
+.logos-note p{font-size:12.5px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:16px;}
+.logo-placeholders{display:flex;flex-wrap:wrap;gap:26px;justify-content:center;align-items:center;opacity:.5;}
+.logo-placeholders div{width:100px;height:34px;background:var(--line);border-radius:6px;}
+
+/* =========================================================
+   COMPARISON
+========================================================= */
+.compare{background:var(--white);}
+.compare-table{
+  width:100%;border-collapse:separate;border-spacing:0;
+  border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  font-size:14px;
+}
+.compare-table th{
+  padding:16px 14px;text-align:left;font-family:var(--font-display);font-size:14px;
+}
+.compare-table th.without{background:var(--navy-deeper);color:rgba(255,255,255,.55);}
+.compare-table th.with{background:var(--teal);color:#fff;}
+.compare-table td{padding:14px;border-top:1px solid var(--line);vertical-align:top;}
+.compare-table td.without-cell{color:var(--ink-faint);background:#FBFBFC;}
+.compare-table td.with-cell{color:var(--ink);background:rgba(0,122,120,.04);font-weight:500;}
+.compare-table tr td:first-child{width:50%;}
+
+/* =========================================================
+   BONUSES
+========================================================= */
+.bonus{background:var(--bg);}
+.bonus-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+.bonus-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;position:relative;overflow:hidden;
+}
+.bonus-card::before{
+  content:'BONO';position:absolute;top:14px;right:-30px;background:var(--gold);color:#fff;
+  font-size:10px;font-weight:800;padding:4px 34px;transform:rotate(35deg);letter-spacing:.06em;
+}
+.bonus-card h4{font-size:17px;color:var(--navy-deeper);margin-bottom:8px;padding-right:40px;}
+.bonus-card p{color:var(--ink-soft);font-size:14.5px;margin:0 0 10px;}
+.bonus-card .value{font-size:13px;font-weight:700;color:var(--teal);}
+.bonus-total{
+  margin-top:26px;text-align:center;padding:22px;border:2px dashed var(--gold);border-radius:var(--radius);
+}
+.bonus-total p{margin:0;font-size:15px;color:var(--ink-soft);}
+.bonus-total strong{display:block;font-size:24px;color:var(--navy-deeper);margin-top:6px;}
+
+/* =========================================================
+   GUARANTEE
+========================================================= */
+.guarantee{background:var(--navy-deeper);color:#fff;}
+.guarantee-box{
+  max-width:640px;margin:0 auto;text-align:center;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;padding:48px 30px;
+}
+.guarantee-seal{
+  width:88px;height:88px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),#DEB94A);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 22px;
+  color:var(--navy-deeper);box-shadow:0 12px 30px rgba(197,160,40,.35);
+}
+.guarantee-box h3{font-size:22px;margin-bottom:14px;}
+.guarantee-box p{color:rgba(255,255,255,.72);font-size:15.5px;}
+
+/* =========================================================
+   PRICING
+========================================================= */
+.pricing{background:var(--white);}
+.price-card{
+  max-width:460px;margin:0 auto;border:2px solid var(--navy);border-radius:20px;
+  padding:38px 30px;text-align:center;box-shadow:var(--shadow-lg);position:relative;
+  background:linear-gradient(180deg,#fff, #F9FBFC);
+}
+.price-card .ribbon{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--danger);color:#fff;font-size:12px;font-weight:700;
+  padding:6px 18px;border-radius:100px;white-space:nowrap;
+}
+.price-old{font-size:18px;color:var(--ink-faint);text-decoration:line-through;}
+.price-new{font-family:var(--font-display);font-weight:800;font-size:52px;color:var(--navy-deeper);margin:6px 0 2px;}
+.price-new span{font-size:20px;font-weight:600;color:var(--ink-faint);}
+.price-sub{font-size:13px;color:var(--ink-faint);margin-bottom:26px;}
+.price-feats{list-style:none;padding:0;margin:0 0 28px;text-align:left;display:grid;gap:12px;}
+.price-feats li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-soft);align-items:flex-start;}
+
+/* =========================================================
+   FAQ
+========================================================= */
+.faq{background:var(--bg);}
+.faq-list{max-width:760px;margin:0 auto;}
+.faq-item{
+  border-bottom:1px solid var(--line);
+}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;padding:20px 4px;
+  display:flex;justify-content:space-between;align-items:center;cursor:pointer;
+  font-family:var(--font-display);font-weight:600;font-size:15.5px;color:var(--ink);gap:16px;
+}
+.faq-q .plus{
+  flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--teal);color:var(--teal);
+  display:flex;align-items:center;justify-content:center;font-size:16px;transition:transform .25s ease;
+}
+.faq-item.open .plus{transform:rotate(45deg);background:var(--teal);color:#fff;}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .3s ease, padding .3s ease;
+  font-size:14.5px;color:var(--ink-soft);padding:0 4px;
+}
+.faq-item.open .faq-a{max-height:260px;padding-bottom:20px;}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+.final-cta{
+  background:radial-gradient(120% 140% at 85% 110%, #2C5AA0 0%, var(--navy) 45%, var(--navy-deeper) 100%);
+  color:#fff;text-align:center;
+}
+.final-cta h2{font-size:clamp(28px,5vw,42px);line-height:1.15;max-width:760px;margin:0 auto 18px;}
+.final-cta h2 em{font-style:normal;color:var(--sky);}
+.final-cta p.lead{max-width:560px;margin:0 auto 34px;color:rgba(255,255,255,.75);font-size:16.5px;}
+.final-cta .btn-primary{font-size:18px;padding:20px 40px;}
+.final-note{margin-top:22px;font-size:13px;color:rgba(255,255,255,.5);}
+
+/* Sticky mobile bar */
+.sticky-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:99;
+  background:#fff;border-top:1px solid var(--line);
+  padding:12px var(--pad);box-shadow:0 -8px 24px rgba(18,32,58,.12);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  transform:translateY(120%);transition:transform .35s ease;
+}
+.sticky-bar.show{transform:translateY(0);}
+.sticky-bar .price{font-family:var(--font-display);font-weight:800;color:var(--navy-deeper);font-size:17px;}
+.sticky-bar .price small{display:block;font-size:10.5px;color:var(--ink-faint);font-weight:500;}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer{background:var(--navy-deeper);color:rgba(255,255,255,.6);padding:52px 0 100px;}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:32px;}
+.footer-brand h4{color:#fff;font-size:18px;margin-bottom:10px;}
+.footer-brand p{font-size:13.5px;line-height:1.6;max-width:320px;}
+footer h5{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:13.5px;}
+footer ul li a:hover{color:var(--sky);}
+.footer-social{display:flex;gap:12px;margin-top:14px;}
+.footer-social a{
+  width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;transition:background .2s ease;
+}
+.footer-social a:hover{background:var(--teal);}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:22px;
+  display:flex;flex-direction:column;gap:10px;font-size:12.5px;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET / DESKTOP (mobile-first upscale)
+========================================================= */
+@media (min-width:640px){
+  .problem-list{grid-template-columns:1fr 1fr;}
+  .benefit-grid{grid-template-columns:repeat(2,1fr);}
+  .include-grid{grid-template-columns:repeat(2,1fr);}
+  .audience-grid{grid-template-columns:1fr 1fr;}
+  .stats-row{grid-template-columns:repeat(4,1fr);}
+  .testi-grid{grid-template-columns:repeat(2,1fr);}
+  .bonus-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1.4fr 1fr 1fr;}
+}
+@media (min-width:900px){
+  .nav-links{display:flex;gap:28px;align-items:center;font-size:14px;color:rgba(255,255,255,.75);}
+  .nav-links a:hover{color:#fff;}
+  .hero-grid{grid-template-columns:1.05fr 0.95fr;}
+  .hero p.sub{margin-left:0;}
+  .solution-inner{grid-template-columns:1fr 1fr;}
+  .benefit-grid{grid-template-columns:repeat(3,1fr);}
+  .include-grid{grid-template-columns:repeat(3,1fr);}
+  .bonus-grid{grid-template-columns:repeat(3,1fr);}
+  .sticky-bar{display:none;}
+  .pad{padding:100px 0;}
+}
+</style>
+</head>
+<body>
+
+<!-- Hotmart checkout widget: loaded once, powers every "hotmart-fb" button on the page -->
+<script type="text/javascript">
+	function importHotmart(){
+ 		var imported = document.createElement('script');
+ 		imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+ 		document.head.appendChild(imported);
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+		document.head.appendChild(link);	}
+ 	importHotmart();
+ </script>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Biblioteca <span>BPO</span></div>
+    <div class="nav-links">
+      <a href="#solucion">La solución</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#modulos">Las 9 guías</a>
+      <a href="#faq">Preguntas</a>
+    </div>
+    <a onclick="return false;" href="https://go.hotmart.com/O106649878G" class="btn btn-primary nav-cta hotmart-fb hotmart__button-checkout">Quiero mi Ruta TM</a>
+  </div>
+</nav>
+
+<!-- ============ 1. HERO ============ -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Serie La Ruta TM · Biblioteca BPO
+      </div>
+      <h1>Ascender te da el puesto; <em>prepararte te convierte en líder.</em></h1>
+      <p class="sub">La Ruta TM reúne 9 guías prácticas de liderazgo diseñadas para agentes que quieren prepararse para un ascenso y para Team Managers que ya lideran equipos y necesitan fortalecer sus competencias. Contenido aplicado al mundo BPO, con herramientas reales y situaciones operativas del día a día.</p>
+      <div class="hero-ctas">
+        <a onclick="return false;" href="https://go.hotmart.com/O106649878G" class="btn btn-primary hotmart-fb hotmart__button-checkout">Quiero mi Ruta TM Ahora →</a>
+        <a href="#incluye" class="btn btn-ghost">Ver qué incluye</a>
+      </div>
+      <div class="hero-trust">
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.3L22 9l-5 5.1L18.2 22 12 18.6 5.8 22 7 14.1 2 9l7.1-.7L12 2z" fill="var(--gold)"/></svg> 25+ años de experiencia operativa BPO</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="var(--sky)" stroke-width="2"/></svg> Garantía de 7 días</div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="var(--sky)" stroke-width="2"/></svg> Acceso inmediato en Hotmart</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="stack">
+        <div class="card-book b2"><div><div class="tag">Módulo</div></div><div class="title">Comunicación y Gestión del Día a Día</div><div class="num">02 / 09</div></div>
+        <div class="card-book b1"><div><div class="tag">La Ruta TM</div></div><div class="title">El sistema completo para Team Managers</div><div class="num">09 guías</div></div>
+        <div class="card-book b3"><div><div class="tag">Módulo</div></div><div class="title">Finanzas para Team Managers</div><div class="num">05 / 09</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 2. PROBLEMA ============ -->
+<section class="problem pad" id="problema">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">El problema real</span>
+      <h2>Hay dos caminos que te traen hasta acá. Los dos tienen el mismo vacío.</h2>
+      <p>No importa en cuál de los dos estés — el resultado es el mismo: estás liderando (o a punto de liderar) sin que nadie te haya dado el sistema para hacerlo bien.</p>
+    </div>
+
+    <div class="problem-list" style="grid-template-columns:1fr;gap:24px;">
+      <div class="problem-path reveal" style="border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;background:var(--bg);">
+        <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;">Camino A · Ya subiste de puesto</span>
+        <h3 style="font-size:19px;color:var(--navy-deeper);margin-bottom:14px;">Subiste sin que te capacitaran</h3>
+        <div style="display:grid;gap:14px;">
+          <div class="problem-item" style="background:var(--white);"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.3 3.9L2.7 17a2 2 0 001.7 3h15.2a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="2"/></svg></div>
+          <p><strong>Apagas incendios todo el día</strong> y nunca llegas a lo que realmente mueve el indicador: coaching, seguimiento y disciplina operativa.</p></div>
+          <div class="problem-item" style="background:var(--white);"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.3 3.9L2.7 17a2 2 0 001.7 3h15.2a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="2"/></svg></div>
+          <p><strong>Improvisas cada feedback</strong> a tu equipo porque nadie te dio una estructura, y eso se nota — en tu autoridad y en tus resultados.</p></div>
+          <div class="problem-item" style="background:var(--white);"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.3 3.9L2.7 17a2 2 0 001.7 3h15.2a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="2"/></svg></div>
+          <p><strong>No sabes leer tus propios números</strong> más allá del semáforo del dashboard, así que no puedes explicarle a tu gerencia por qué algo pasó — ni cómo corregirlo.</p></div>
+        </div>
+      </div>
+
+      <div class="problem-path reveal" style="border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;background:var(--bg);">
+        <span style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);margin-bottom:12px;">Camino B · Quieres ascender</span>
+        <h3 style="font-size:19px;color:var(--navy-deeper);margin-bottom:14px;">Quieres prepararte antes de que llegue el ascenso</h3>
+        <div style="display:grid;gap:14px;">
+          <div class="problem-item" style="background:var(--white);"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.3 3.9L2.7 17a2 2 0 001.7 3h15.2a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="2"/></svg></div>
+          <p><strong>Ves a otros agentes ascender</strong> mientras tú sigues sin saber qué te falta demostrar para ser el próximo — porque nadie te dice el criterio real.</p></div>
+          <div class="problem-item" style="background:var(--white);"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.3 3.9L2.7 17a2 2 0 001.7 3h15.2a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="2"/></svg></div>
+          <p><strong>Sabes hacer tu propio trabajo</strong>, pero nunca te enseñaron a liderar a otros — y esa es una habilidad completamente distinta.</p></div>
+          <div class="problem-item" style="background:var(--white);"><div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 8v4m0 4h.01M10.3 3.9L2.7 17a2 2 0 001.7 3h15.2a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" stroke="currentColor" stroke-width="2"/></svg></div>
+          <p><strong>Llegas a la entrevista de ascenso sin evidencia real</strong> de que puedes gestionar un equipo, solo con tus propios resultados individuales.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-cost reveal">
+      <p>Cada mes que pasa sin ese sistema es un mes que no vuelve. Si ya lideras, tu equipo lo paga en resultado. Si estás por ascender, la oportunidad se la lleva otro. En ambos casos, tú lo pagas en <strong>estancamiento</strong> — mientras el reloj de tu próxima evaluación de desempeño sigue corriendo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. SOLUCIÓN ============ -->
+<section class="solution pad" id="solucion">
+  <div class="container solution-inner">
+    <div class="solution-copy reveal">
+      <span class="eyebrow">La solución</span>
+      <h2 style="font-size:clamp(24px,4vw,34px);color:var(--navy-deeper);margin-bottom:16px;">La Ruta TM no es teoría de liderazgo. Es el manual operativo que te faltaba.</h2>
+      <p>La Ruta TM es una serie de 9 guías, construidas desde el piso operativo — no desde el aula — para que un Team Manager de nivel 1 y 2 tenga en sus manos exactamente lo que necesita: procesos, plantillas y criterio para tomar decisiones el mismo día que las abre.</p>
+      <p>Funciona porque no depende de tu experiencia previa ni de un curso de meses. Es progresiva: cada guía te deja un resultado aplicable de inmediato, para que tu forma de liderar cambie <strong>en la operación</strong>, no en la teoría.</p>
+      <div class="solution-points">
+        <div class="pt"><div class="dot">✓</div><p style="margin:0;color:var(--ink-soft);">Basada en 25+ años de experiencia operativa real en BPO, no en material genérico traducido.</p></div>
+        <div class="pt"><div class="dot">✓</div><p style="margin:0;color:var(--ink-soft);">Estructurada como ruta progresiva: cada guía construye sobre la anterior.</p></div>
+        <div class="pt"><div class="dot">✓</div><p style="margin:0;color:var(--ink-soft);">Aplicable el mismo día — sin necesitar aprobación de tu jefatura para empezar.</p></div>
+      </div>
+    </div>
+    <div class="path-graphic reveal">
+      <p style="font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-faint);font-weight:700;margin-bottom:22px;">Tu ruta, en una imagen</p>
+      <div class="row">
+        <div class="path-node">A</div><div class="path-line"></div>
+        <div class="path-node">O</div><div class="path-line"></div>
+        <div class="path-node">TM</div>
+      </div>
+      <div class="path-labels">
+        <span>Agente reactivo</span><span>En transición, sin sistema</span><span>Team Manager con criterio</span>
+      </div>
+      <p style="margin-top:26px;font-size:14px;color:var(--ink-soft);">Menos teoría. Más piso. — así se construye esta ruta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. BENEFICIOS ============ -->
+<section class="benefits pad" id="beneficios">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Lo que cambia para ti</span>
+      <h2>No son características. Es lo que vas a poder hacer distinto desde la semana 1.</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card reveal">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Diriges tu operación en vez de reaccionar a ella</h3>
+        <p>Aplicas un proceso claro para priorizar tu día — así dejas de terminar la jornada exhausto sin saber en qué se fue el tiempo.</p>
+        <span class="result">Resultado: control real de tu día a día</span>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18M8 17V9m5 8V5m5 12v-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Lees tus KPI y explicas el porqué, no solo el número</h3>
+        <p>Entiendes la relación entre tus indicadores operativos y las causas reales detrás de ellos — y eso te vuelve confiable frente a gerencia.</p>
+        <span class="result">Resultado: autoridad basada en criterio, no en suerte</span>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Das feedback que sí genera cambio de conducta</h3>
+        <p>Usas una estructura de comunicación probada para que tus conversaciones difíciles dejen de ser incómodas y empiecen a ser efectivas.</p>
+        <span class="result">Resultado: un equipo que te sigue, no que te tolera</span>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Tomas decisiones financieras y operativas con datos</h3>
+        <p>Comprendes cómo tus decisiones diarias impactan el costo operativo — un lenguaje que tu gerencia sí valora al momento de un ascenso.</p>
+        <span class="result">Resultado: preparación real para el siguiente nivel</span>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Reduces el desgaste de liderar sin herramientas</h3>
+        <p>Trabajas con procesos repetibles en vez de improvisar cada situación — así el estrés deja de acumularse guardia tras guardia.</p>
+        <span class="result">Resultado: menos desgaste, más sostenibilidad</span>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Construyes evidencia real para tu próximo ascenso</h3>
+        <p>Cada guía te deja un entregable aplicado — evidencia concreta de gestión que puedes mostrar cuando llegue tu evaluación.</p>
+        <span class="result">Resultado: un caso sólido para crecer dentro del BPO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. QUÉ INCLUYE ============ -->
+<section class="includes pad" id="incluye">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Qué incluye tu Ruta TM</span>
+      <h2>Todo lo que necesitas dentro de un solo acceso</h2>
+      <p>Nueve guías + herramientas de aplicación inmediata, disponibles en tu Área de Miembros de Hotmart.</p>
+    </div>
+    <div class="include-grid">
+      <div class="include-card reveal">
+        <div class="name">Serie completa</div>
+        <h4>9 guías La Ruta TM</h4>
+        <p>El recorrido completo de liderazgo operativo, desde la transición de agente a TM hasta gestión financiera del equipo.</p>
+        <div class="benefit-tag">Beneficio: una ruta clara, sin adivinar qué sigue</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="name">Herramienta</div>
+        <h4>Plantilla de Plan de Acción</h4>
+        <p>Formato editable para convertir cada hallazgo operativo en un plan con responsables y fechas.</p>
+        <div class="benefit-tag">Beneficio: pasas de la idea a la ejecución el mismo día</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="name">Herramienta</div>
+        <h4>Autoevaluación de Potencial TM</h4>
+        <p>Diagnóstico rápido para identificar tus brechas actuales como líder antes de empezar la ruta.</p>
+        <div class="benefit-tag">Beneficio: sabes exactamente por dónde empezar</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="name">Acceso</div>
+        <h4>Membresía Biblioteca BPO</h4>
+        <p>Acceso a tu Área de Miembros en Hotmart Club, disponible desde tu celular o computador.</p>
+        <div class="benefit-tag">Beneficio: estudias en tus tiempos muertos de operación</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="name">Formato</div>
+        <h4>Guías en PDF de lectura directa</h4>
+        <p>Contenido corto, directo y sin relleno — pensado para leerse entre turno y turno.</p>
+        <div class="benefit-tag">Beneficio: aplicas sin depender de horas de estudio</div>
+      </div>
+      <div class="include-card reveal">
+        <div class="name">Actualización</div>
+        <h4>Acceso a futuras versiones</h4>
+        <p>Si el contenido se actualiza dentro de la serie, tu acceso se actualiza contigo.</p>
+        <div class="benefit-tag">Beneficio: tu inversión no queda obsoleta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. CÓMO FUNCIONA / MÓDULOS ============ -->
+<section class="how pad" id="modulos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>Tu ruta, guía por guía</h2>
+      <p>Un recorrido progresivo: de la transición al puesto, hasta el dominio financiero y operativo de tu equipo.</p>
+    </div>
+    <div class="module-list">
+      <div class="module-item reveal">
+        <div class="module-num">01</div>
+        <div class="module-body"><h4>De Agente a Team Manager</h4><p>La transición mental y operativa que nadie te explicó al ascender: qué dejas de hacer y qué empiezas a ser responsable.</p></div>
+      </div>
+      <div class="module-item reveal">
+        <div class="module-num">02</div>
+        <div class="module-body"><h4>Comunicación y Gestión del Día a Día</h4><p>Estructura para reuniones de piso, briefings y feedback que sí generan cambio de conducta en tu equipo.</p></div>
+      </div>
+      <div class="module-item reveal">
+        <div class="module-num">03</div>
+        <div class="module-body"><h4>Lectura de KPI para Team Managers</h4><p>Cómo interpretar tus indicadores operativos (AHT, ocupación, calidad, adherencia) y explicar la causa detrás del número.</p></div>
+      </div>
+      <div class="module-item reveal">
+        <div class="module-num">04</div>
+        <div class="module-body"><h4>Coaching Operativo en Piso</h4><p>Técnica de acompañamiento individual para corregir desempeño sin generar rotación ni desmotivación.</p></div>
+      </div>
+      <div class="module-item reveal">
+        <div class="module-num">05</div>
+        <div class="module-body"><h4>Finanzas para Team Managers</h4><p>Cómo entender el costo operativo de tu equipo y tomar decisiones que impactan positivamente el P&L de tu cuenta.</p></div>
+      </div>
+      <div class="module-item reveal">
+        <div class="module-num">06</div>
+        <div class="module-body"><h4>Gestión de Conflictos y Conversaciones Difíciles</h4><p>Guion práctico para abordar bajo desempeño, ausentismo y fricciones de equipo sin perder autoridad.</p></div>
+      </div>
+      <div class="module-item reveal">
+        <div class="module-num">07</div>
+        <div class="module-body"><h4>Planeación y Gestión del Tiempo Operativo</h4><p>Cómo priorizar tu jornada cuando todo parece urgente, sin dejar de atender lo que realmente mueve el resultado.</p></div>
+      </div>
+      <div class="module-item reveal">
+        <div class="module-num">08</div>
+        <div class="module-body"><h4>Construcción de Equipos de Alto Desempeño</h4><p>Cómo pasar de administrar personas a construir un equipo que sostiene el resultado incluso cuando no estás mirando.</p></div>
+      </div>
+      <div class="module-item reveal">
+        <div class="module-num">09</div>
+        <div class="module-body"><h4>Preparación para tu Siguiente Ascenso</h4><p>Cómo documentar tu gestión y presentar evidencia real de liderazgo frente a tu próxima evaluación de desempeño.</p></div>
+      </div>
+    </div>
+    <div class="result-banner reveal">
+      <strong>Resultado final:</strong> Un Team Manager que lidera con método, interpreta sus indicadores y demuestra resultados reales para seguir creciendo profesionalmente.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 & 8. PARA QUIÉN ES / NO ES ============ -->
+<section class="audience pad" id="para-quien">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">¿Es para ti?</span>
+      <h2>Seamos directos: esto no es para todo el mundo</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card yes reveal">
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> Es para ti si...</h3>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> Sientes que tienes potencial de liderazgo y quieres desarrollarlo.</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> Te interesa crecer profesionalmente dentro del sector BPO.</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> Eres agente y quieres destacar en futuros procesos de ascenso.</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> Quieres entender mejor tus KPIs y tomar decisiones con datos.</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> Quieres dejar de esperar oportunidades y empezar a prepararte para ellas.</li>
+        </ul>
+      </div>
+      <div class="audience-card no reveal">
+        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="var(--danger)" stroke-width="2.5"/></svg> No es para ti si...</h3>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="var(--danger)" stroke-width="2.5"/></svg> No tienes interés en crecer profesionalmente.</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="var(--danger)" stroke-width="2.5"/></svg> Esperas que el ascenso llegue solo por antigüedad.</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="var(--danger)" stroke-width="2.5"/></svg> No estás dispuesto a salir de tu zona de comodidad.</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="var(--danger)" stroke-width="2.5"/></svg> Esperas que otros planifiquen tu crecimiento profesional.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. COMPARATIVA ============ -->
+<section class="compare pad" id="comparativa">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Comparativa</span>
+      <h2>La diferencia entre liderar a ciegas y liderar con Ruta</h2>
+    </div>
+    <table class="compare-table">
+      <thead>
+        <tr><th class="without">Sin La Ruta TM</th><th class="with">Con La Ruta TM</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="without-cell">Improvisas cada feedback y conversación difícil</td><td class="with-cell">Tienes una estructura probada para cada conversación clave</td></tr>
+        <tr><td class="without-cell">Reaccionas al día a día sin prioridad clara</td><td class="with-cell">Diriges tu jornada con un método de priorización operativa</td></tr>
+        <tr><td class="without-cell">Solo miras el semáforo del KPI, sin entender la causa</td><td class="with-cell">Interpretas tus indicadores y explicas el porqué a tu gerencia</td></tr>
+        <tr><td class="without-cell">Tu desarrollo depende de cursos genéricos de la empresa</td><td class="with-cell">Tienes tu propio sistema de crecimiento, disponible cuando lo necesitas</td></tr>
+        <tr><td class="without-cell">Llegas a tu evaluación sin evidencia concreta de gestión</td><td class="with-cell">Presentas planes de acción y resultados documentados</td></tr>
+        <tr><td class="without-cell">El desgaste operativo se acumula turno tras turno</td><td class="with-cell">Reduces el estrés con procesos repetibles, no con improvisación</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 11. BONOS ============ -->
+<section class="bonus pad" id="bonos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Bonos de lanzamiento</span>
+      <h2>Además de las 9 guías, te llevas esto</h2>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card reveal">
+        <h4>Autoevaluación de Potencial TM</h4>
+        <p>Diagnóstico interactivo para ubicar tu punto de partida real como líder antes de comenzar la ruta.</p>
+        <span class="value">Valor: US$9,99</span>
+      </div>
+      <div class="bonus-card reveal">
+        <h4>Plantilla de Plan de Acción</h4>
+        <p>El mismo formato que usan operaciones certificadas COPC para convertir hallazgos en resultados medibles.</p>
+        <span class="value">Valor: US$9,99</span>
+      </div>
+      <div class="bonus-card reveal">
+        <h4>Catálogo de KPI Operativos BPO</h4>
+        <p>Referencia rápida de los indicadores clave de contact center, con su fórmula y su lectura correcta.</p>
+        <span class="value">Valor: US$7,99</span>
+      </div>
+    </div>
+    <div class="bonus-total reveal">
+      <p>Valor total de bonos incluidos</p>
+      <strong>US$27,97 — Hoy, gratis con tu Ruta TM</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. GARANTÍA ============ -->
+<section class="guarantee pad" id="garantia">
+  <div class="container">
+    <div class="guarantee-box reveal">
+      <div class="guarantee-seal">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" stroke="var(--navy-deeper)" stroke-width="1.8"/><path d="M9 12l2 2 4-4" stroke="var(--navy-deeper)" stroke-width="1.8"/></svg>
+      </div>
+      <h3>Garantía de 7 días, sin letra pequeña</h3>
+      <p>Entra a La Ruta TM, revisa el contenido y aplícalo. Si en 7 días sientes que no es lo que necesitabas, escríbenos y te devolvemos tu dinero. El riesgo lo asumimos nosotros, no tú.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing pad" id="precio">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Tu inversión</span>
+      <h2>Acceso completo a La Ruta TM</h2>
+    </div>
+    <div class="price-card reveal">
+      <div class="ribbon">Precio de lanzamiento</div>
+      <div class="price-old">US$52,96</div>
+      <div class="price-new">US$24,99 <span>/ pago único</span></div>
+      <div class="price-sub">Acceso de por vida · Sin mensualidades · Actualizaciones incluidas</div>
+      <ul class="price-feats">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> Las 9 guías completas de La Ruta TM</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> 3 bonos por valor de US$27,97</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> Acceso inmediato en tu Área de Miembros</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="var(--teal)" stroke-width="2.5"/></svg> Garantía de 7 días sin condiciones</li>
+      </ul>
+      <a onclick="return false;" href="https://go.hotmart.com/O106649878G" class="btn btn-primary btn-block hotmart-fb hotmart__button-checkout">Quiero mi Ruta TM Ahora →</a>
+      <p style="margin-top:14px;font-size:12px;color:var(--ink-faint);">Pago 100% seguro procesado por Hotmart</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. FAQ ============ -->
+<section class="faq pad" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Antes de que preguntes, respondamos</h2>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q">¿Necesito experiencia previa como líder para aprovechar La Ruta TM? <span class="plus">+</span></button>
+        <div class="faq-a"><p>No. La Ruta está diseñada tanto para quien ya lidera un equipo como para el agente senior que está por dar ese salto. Cada guía parte de cero en el tema y va directo a la aplicación.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿En qué formato recibo el contenido? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Guías en PDF de lectura directa, accesibles desde tu Área de Miembros en Hotmart Club, desde el celular o el computador.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Cuánto tiempo toma completar la serie completa? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Cada guía está pensada para leerse y aplicarse en menos de una semana. La ruta completa se puede recorrer en 9 a 12 semanas a tu propio ritmo, sin fecha límite.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Qué pasa si mi empresa no usa exactamente los mismos KPI? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Los principios operativos que enseña La Ruta TM aplican a cualquier operación de contact center o BPO, independientemente de la nomenclatura específica de tus indicadores.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿El acceso tiene vencimiento? <span class="plus">+</span></button>
+        <div class="faq-a"><p>No. Tu acceso es de por vida, incluyendo las actualizaciones futuras de contenido dentro de la serie.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Cómo funciona la garantía de 7 días? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Tienes 7 días desde tu compra para solicitar el reembolso completo si consideras que el contenido no es para ti. Sin preguntas incómodas, sin letra pequeña.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Puedo pagar en pesos colombianos o en mi moneda local? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Sí. Hotmart convierte automáticamente el precio en dólares a tu moneda local durante el checkout, según el país desde el que compras.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Esto reemplaza la capacitación formal de mi empresa? <span class="plus">+</span></button>
+        <div class="faq-a"><p>No busca reemplazarla — la complementa con lo que la capacitación corporativa casi nunca cubre: aplicación operativa directa y criterio de piso.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Sirve si trabajo en una operación de ventas y no solo de servicio al cliente? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Sí. Los principios de liderazgo, lectura de KPI y gestión de equipo aplican a cualquier tipo de operación de contact center: servicio, ventas, cobranza o soporte técnico.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Hay soporte si tengo dudas durante la ruta? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Puedes escribir directamente a martin.molina49@gmail.com ante cualquier duda sobre el contenido o el acceso a tu membresía.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Necesito comprar las guías por separado? <span class="plus">+</span></button>
+        <div class="faq-a"><p>No. La Ruta TM incluye las 9 guías completas más los bonos en un único pago de US$24,99.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14. CTA FINAL ============ -->
+<section class="final-cta pad">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--sky);">Última llamada</span>
+    <h2>¿Cuántos ascensos más vas a ver pasar <em>sin ti</em>?</h2>
+    <p class="lead">Cada mes que sigues liderando por instinto es un mes que ya no vuelve. Otros TM de tu misma generación ya están un paso adelante — no porque sean mejores, sino porque encontraron un sistema antes que tú.</p>
+    <a onclick="return false;" href="https://go.hotmart.com/O106649878G" class="btn btn-primary hotmart-fb hotmart__button-checkout">Quiero Empezar Mi Ruta TM Ahora →</a>
+    <p class="final-note">Acceso inmediato · Garantía de 7 días · US$24,99 pago único</p>
+  </div>
+</section>
+
+<!-- ============ STICKY MOBILE BAR ============ -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="price">US$24,99<small>Pago único · Garantía 7 días</small></div>
+  <a onclick="return false;" href="https://go.hotmart.com/O106649878G" class="btn btn-primary hotmart-fb hotmart__button-checkout">Quiero mi Ruta →</a>
+</div>
+
+<!-- ============ 15. FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Biblioteca BPO</h4>
+        <p>Contenido de liderazgo operativo para profesionales de BPO y contact center en Latinoamérica, por Growth Path Academy. Menos teoría. Más piso.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/growthpathacademy/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" fill="#fff"/></svg></a>
+          <a href="https://www.instagram.com/growthpathacademy/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="#fff"/></svg></a>
+          <a href="https://www.linkedin.com/in/mart%C3%ADnmolina" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="#fff" stroke-width="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 13v4" stroke="#fff" stroke-width="2"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Producto</h5>
+        <ul>
+          <li><a href="#incluye">Qué incluye</a></li>
+          <li><a href="#modulos">Las 9 guías</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a onclick="return false;" href="https://go.hotmart.com/O106649878G" class="hotmart-fb hotmart__button-checkout">Comprar en Hotmart</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="https://growthpathacademy.com.co/contacto.html" target="_blank" rel="noopener">growthpathacademy.com.co/contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Growth Path Academy · Biblioteca BPO. Todos los derechos reservados.</div>
+      <div>Este producto es un recurso de formación profesional y no constituye una certificación oficial. Los resultados dependen de la aplicación individual de cada usuario.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  q.addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.15});
+revealEls.forEach(el => io.observe(el));
+
+// Sticky mobile bar after hero
+const stickyBar = document.getElementById('stickyBar');
+const hero = document.querySelector('.hero');
+const stickyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(window.innerWidth < 900){
+      if(!e.isIntersecting){ stickyBar.classList.add('show'); } else { stickyBar.classList.remove('show'); }
+    }
+  });
+}, {threshold:0});
+stickyObserver.observe(hero);
+
+// Nav background intensifies on scroll
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 40){ nav.style.background = 'rgba(13,31,61,.92)'; }
+  else { nav.style.background = 'rgba(13,31,61,.72)'; }
+});
+</script>
+
+</body>
+</html>
