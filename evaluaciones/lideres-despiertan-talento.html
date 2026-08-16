@@ -431,6 +431,41 @@
       padding:25px 0 40px;
     }
 
+    .report-actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .report-button{
+      background:var(--teal);
+      color:#fff;
+      min-width:240px;
+    }
+
+    .report-button:hover{
+      background:#007A78;
+    }
+
+    .report-status{
+      text-align:center;
+      margin-top:12px;
+      min-height:20px;
+    }
+
+    .report-status.success{
+      color:var(--success);
+      font-weight:700;
+    }
+
+    .report-status.error{
+      color:var(--danger);
+      font-weight:700;
+      display:block;
+    }
+
     .hidden{display:none!important}
 
     @media(max-width:700px){
@@ -443,6 +478,8 @@
       .quiz-nav button{width:100%}
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
 
 <body>
@@ -662,6 +699,13 @@
     <p class="muted" style="margin-top:22px">
       Tu resultado ha sido registrado correctamente.
     </p>
+
+    <div class="report-actions">
+      <button id="downloadReportButton" class="report-button" type="button">
+        📊 Descargar reporte de resultados
+      </button>
+    </div>
+    <div id="reportStatus" class="report-status" aria-live="polite"></div>
   </section>
 
 </main>
@@ -765,6 +809,12 @@ const participantError =
 
 const quizError =
   document.getElementById("quizError");
+
+const downloadReportButton =
+  document.getElementById("downloadReportButton");
+
+const reportStatus =
+  document.getElementById("reportStatus");
 
 
 /****************************************************************
@@ -1671,6 +1721,19 @@ function mostrarResultado(
     data.competencia_oportunidad_id ||
     "--";
 
+  // Guardar el resultado completo para el generador del reporte PDF.
+  window.lastEvaluationResult = data;
+
+  if (reportStatus) {
+    reportStatus.textContent = "";
+    reportStatus.className = "report-status";
+  }
+
+  if (downloadReportButton) {
+    downloadReportButton.disabled = false;
+    downloadReportButton.textContent = "📊 Descargar reporte de resultados";
+  }
+
 
   window.scrollTo({
     top:0,
@@ -1678,6 +1741,460 @@ function mostrarResultado(
   });
 
 }
+
+
+/****************************************************************
+ * REPORTE PDF — LÍDERES QUE DESPIERTAN TALENTO
+ *
+ * Genera un reporte ejecutivo de 4 páginas directamente en el
+ * navegador usando los datos devueltos por Apps Script.
+ ****************************************************************/
+
+function setReportStatus(message, type){
+
+  if(!reportStatus){
+    return;
+  }
+
+  reportStatus.textContent = message || "";
+  reportStatus.className = "report-status" +
+    (type ? " " + type : "");
+
+}
+
+
+function colorRGB(hex){
+
+  const clean = String(hex).replace("#", "");
+
+  return {
+    r: parseInt(clean.substring(0,2),16),
+    g: parseInt(clean.substring(2,4),16),
+    b: parseInt(clean.substring(4,6),16)
+  };
+
+}
+
+
+function aplicarColor(doc, hex){
+
+  const c = colorRGB(hex);
+  doc.setTextColor(c.r,c.g,c.b);
+
+}
+
+
+function aplicarFill(doc, hex){
+
+  const c = colorRGB(hex);
+  doc.setFillColor(c.r,c.g,c.b);
+
+}
+
+
+function aplicarDraw(doc, hex){
+
+  const c = colorRGB(hex);
+  doc.setDrawColor(c.r,c.g,c.b);
+
+}
+
+
+function textoSeguro(value, fallback){
+
+  const text = String(value ?? "").trim();
+
+  return text || fallback || "--";
+
+}
+
+
+function formatearFechaReporte(){
+
+  const fecha = new Date();
+
+  return fecha.toLocaleDateString("es-CO", {
+    day:"2-digit",
+    month:"long",
+    year:"numeric"
+  });
+
+}
+
+
+function dibujarEncabezadoReporte(doc, titulo, subtitulo){
+
+  aplicarFill(doc, "#1B365D");
+  doc.rect(0,0,297,18,"F");
+
+  aplicarFill(doc, "#C5A028");
+  doc.rect(0,0,18,18,"F");
+
+  aplicarColor(doc, "#FFFFFF");
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(10);
+  doc.text("GROWTH PATH ACADEMY",24,8);
+
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(7.5);
+  doc.text("Líderes que Despiertan Talento",24,13);
+
+  aplicarColor(doc, "#1B365D");
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(19);
+  doc.text(titulo,18,31);
+
+  aplicarColor(doc, "#00968F");
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(10);
+  doc.text(subtitulo,18,38);
+
+}
+
+
+function dibujarPieReporte(doc, pagina){
+
+  aplicarDraw(doc, "#D9E0E8");
+  doc.setLineWidth(.3);
+  doc.line(18,195,279,195);
+
+  aplicarColor(doc, "#6B7280");
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(7);
+  doc.text("Growth Path Academy · Documento de referencia para desarrollo",18,201);
+  doc.text("Página " + pagina,279,201,{align:"right"});
+
+}
+
+
+function dibujarTarjeta(doc, x, y, w, h, etiqueta, valor, valorSize){
+
+  aplicarFill(doc, "#FFFFFF");
+  aplicarDraw(doc, "#D9E0E8");
+  doc.roundedRect(x,y,w,h,3,3,"FD");
+
+  aplicarColor(doc, "#6B7280");
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(7.5);
+  doc.text(etiqueta.toUpperCase(),x+5,y+8);
+
+  aplicarColor(doc, "#1B365D");
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(valorSize || 14);
+  const lines = doc.splitTextToSize(valor, w-10);
+  doc.text(lines,x+5,y+17);
+
+}
+
+
+function dibujarBarraDimension(doc, x, y, w, nombre, porcentaje){
+
+  const labelW = 82;
+  const barX = x + labelW;
+  const barW = w - labelW - 16;
+  const pct = Math.max(0,Math.min(100,Number(porcentaje)||0));
+
+  aplicarColor(doc,"#243B53");
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(8.5);
+  const labelLines = doc.splitTextToSize(textoSeguro(nombre,"Dimensión"),labelW-3);
+  doc.text(labelLines,x,y+5);
+
+  aplicarFill(doc,"#E7ECF2");
+  doc.roundedRect(barX,y,barW,7,2,2,"F");
+
+  aplicarFill(doc,"#00968F");
+  doc.roundedRect(barX,y,barW*pct/100,7,2,2,"F");
+
+  aplicarColor(doc,"#1B365D");
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(8.5);
+  doc.text(pct.toFixed(1)+"%",x+w,y+5,{align:"right"});
+
+}
+
+
+function generarReportePDF(){
+
+  try{
+
+    if(!window.jspdf || !window.jspdf.jsPDF){
+      throw new Error("No fue posible cargar el generador PDF. Recarga la página e inténtalo nuevamente.");
+    }
+
+    const data = window.lastEvaluationResult;
+
+    if(!data){
+      throw new Error("No encontramos los datos de tu evaluación para generar el reporte.");
+    }
+
+    const dimensiones = Array.isArray(data.dimensiones_resultados)
+      ? data.dimensiones_resultados.slice()
+      : [];
+
+    if(dimensiones.length < 4){
+      throw new Error("El reporte no recibió las cuatro dimensiones de la evaluación. Verifica la versión publicada de la API.");
+    }
+
+    const dimensionesOrdenadas = dimensiones.sort(function(a,b){
+      return String(a.id).localeCompare(String(b.id),"es",{numeric:true});
+    });
+
+    const jsPDF = window.jspdf.jsPDF;
+    const doc = new jsPDF({
+      orientation:"landscape",
+      unit:"mm",
+      format:"a4",
+      compress:true
+    });
+
+    const nombre = textoSeguro(participant.nombre,"Participante");
+    const fecha = formatearFechaReporte();
+    const puntaje = Number(data.puntaje_porcentaje || 0);
+    const total = Number(data.puntaje_total || 0);
+    const aprobado = String(data.aprobado || "").toUpperCase() === "SI";
+    const nivel = textoSeguro(data.nivel_nombre,data.nivel_id);
+    const perfil = textoSeguro(data.perfil_nombre,data.perfil_id);
+    const fortalezaDim = textoSeguro(data.dimension_fortaleza_nombre,data.dimension_fortaleza_id);
+    const oportunidadDim = textoSeguro(data.dimension_oportunidad_nombre,data.dimension_oportunidad_id);
+    const fortalezaComp = textoSeguro(data.competencia_fortaleza_nombre,data.competencia_fortaleza_id);
+    const oportunidadComp = textoSeguro(data.competencia_oportunidad_nombre,data.competencia_oportunidad_id);
+    const recomendacion = textoSeguro(
+      data.recomendacion_texto || data.perfil_recomendacion_general,
+      "Utiliza tus resultados como punto de partida para definir acciones concretas de desarrollo."
+    );
+
+    // ------------------------------------------------------------
+    // PÁGINA 1 — RESULTADO GENERAL
+    // ------------------------------------------------------------
+    dibujarEncabezadoReporte(doc,"REPORTE DE RESULTADOS","Líderes que Despiertan Talento");
+
+    aplicarFill(doc,"#F5F7FA");
+    aplicarDraw(doc,"#D9E0E8");
+    doc.roundedRect(18,46,261,25,4,4,"FD");
+
+    aplicarColor(doc,"#6B7280");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(7.5);
+    doc.text("PARTICIPANTE",24,54);
+    doc.text("FECHA DE EVALUACIÓN",170,54);
+
+    aplicarColor(doc,"#1B365D");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(11);
+    doc.text(nombre,24,62);
+    doc.setFont("helvetica","normal");
+    doc.text(fecha,170,62);
+
+    dibujarTarjeta(doc,18,79,58,31,"Resultado",puntaje.toFixed(1)+"%",19);
+    dibujarTarjeta(doc,82,79,58,31,"Puntaje",total+" / 20",15);
+    dibujarTarjeta(doc,146,79,58,31,"Nivel",nivel,12);
+    dibujarTarjeta(doc,210,79,69,31,"Perfil",perfil,12);
+
+    aplicarFill(doc,aprobado ? "#EAF7F1" : "#FEF3F2");
+    aplicarDraw(doc,aprobado ? "#B7E3D0" : "#FECACA");
+    doc.roundedRect(18,118,261,16,3,3,"FD");
+    aplicarColor(doc,aprobado ? "#087F5B" : "#B42318");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(11);
+    doc.text(aprobado ? "✓  EVALUACIÓN APROBADA" : "!  EVALUACIÓN NO APROBADA",148.5,128,{align:"center"});
+
+    aplicarColor(doc,"#1B365D");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(12);
+    doc.text("¿Qué significa este resultado?",18,149);
+    aplicarColor(doc,"#243B53");
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(9);
+    const introLines = doc.splitTextToSize(
+      "Este reporte presenta una lectura ejecutiva de los resultados obtenidos en la evaluación. Su propósito es orientar conversaciones de desarrollo y aprendizaje.",
+      245
+    );
+    doc.text(introLines,18,158);
+
+    dibujarPieReporte(doc,1);
+
+    // ------------------------------------------------------------
+    // PÁGINA 2 — MAPA DE LIDERAZGO
+    // ------------------------------------------------------------
+    doc.addPage();
+    dibujarEncabezadoReporte(doc,"TU MAPA DE LIDERAZGO","Resultado por dimensión");
+
+    let y = 51;
+    dimensionesOrdenadas.forEach(function(item){
+      dibujarBarraDimension(doc,18,y,261,item.nombre,item.porcentaje);
+      y += 28;
+    });
+
+    aplicarFill(doc,"#F1FAF8");
+    aplicarDraw(doc,"#BFE5DF");
+    doc.roundedRect(18,151,125,28,4,4,"FD");
+    aplicarColor(doc,"#00968F");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(7.5);
+    doc.text("FORTALEZA PRINCIPAL",24,159);
+    aplicarColor(doc,"#1B365D");
+    doc.setFontSize(10.5);
+    doc.text(doc.splitTextToSize(fortalezaDim,112),24,168);
+
+    aplicarFill(doc,"#FCF9F0");
+    aplicarDraw(doc,"#E6D7A5");
+    doc.roundedRect(154,151,125,28,4,4,"FD");
+    aplicarColor(doc,"#C5A028");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(7.5);
+    doc.text("OPORTUNIDAD PRINCIPAL",160,159);
+    aplicarColor(doc,"#1B365D");
+    doc.setFontSize(10.5);
+    doc.text(doc.splitTextToSize(oportunidadDim,112),160,168);
+
+    dibujarPieReporte(doc,2);
+
+    // ------------------------------------------------------------
+    // PÁGINA 3 — FORTALEZAS Y OPORTUNIDADES
+    // ------------------------------------------------------------
+    doc.addPage();
+    dibujarEncabezadoReporte(doc,"FORTALEZAS Y OPORTUNIDADES","Del resultado a una lectura de desarrollo");
+
+    aplicarFill(doc,"#F1FAF8");
+    aplicarDraw(doc,"#BFE5DF");
+    doc.roundedRect(18,48,125,65,4,4,"FD");
+    aplicarColor(doc,"#00968F");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(8);
+    doc.text("★  TU PRINCIPAL FORTALEZA",24,57);
+    aplicarColor(doc,"#1B365D");
+    doc.setFontSize(13);
+    doc.text(doc.splitTextToSize(fortalezaDim,112),24,68);
+    aplicarColor(doc,"#6B7280");
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(7.5);
+    doc.text("Competencia destacada",24,88);
+    aplicarColor(doc,"#243B53");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(10.5);
+    doc.text(doc.splitTextToSize(fortalezaComp,112),24,97);
+    aplicarColor(doc,"#243B53");
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(8.5);
+    doc.text(doc.splitTextToSize("Tu resultado muestra una fortaleza relativa en esta dimensión y competencia.",112),24,107);
+
+    aplicarFill(doc,"#FCF9F0");
+    aplicarDraw(doc,"#E6D7A5");
+    doc.roundedRect(154,48,125,65,4,4,"FD");
+    aplicarColor(doc,"#C5A028");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(8);
+    doc.text("↑  TU PRINCIPAL OPORTUNIDAD",160,57);
+    aplicarColor(doc,"#1B365D");
+    doc.setFontSize(13);
+    doc.text(doc.splitTextToSize(oportunidadDim,112),160,68);
+    aplicarColor(doc,"#6B7280");
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(7.5);
+    doc.text("Competencia a fortalecer",160,88);
+    aplicarColor(doc,"#243B53");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(10.5);
+    doc.text(doc.splitTextToSize(oportunidadComp,112),160,97);
+    aplicarColor(doc,"#243B53");
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(8.5);
+    doc.text(doc.splitTextToSize("Este resultado representa un espacio prioritario para tu desarrollo.",112),160,107);
+
+    aplicarColor(doc,"#1B365D");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(12);
+    doc.text("Recomendación de desarrollo",18,129);
+
+    aplicarFill(doc,"#F5F7FA");
+    aplicarDraw(doc,"#D9E0E8");
+    doc.roundedRect(18,135,261,32,4,4,"FD");
+    aplicarColor(doc,"#243B53");
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(8.5);
+    const recLines = doc.splitTextToSize(recomendacion,245);
+    doc.text(recLines.slice(0,4),25,145);
+
+    dibujarPieReporte(doc,3);
+
+    // ------------------------------------------------------------
+    // PÁGINA 4 — DE LA EVALUACIÓN A LA ACCIÓN
+    // ------------------------------------------------------------
+    doc.addPage();
+    dibujarEncabezadoReporte(doc,"DE LA EVALUACIÓN A LA ACCIÓN","Convierte el resultado en un punto de partida para tu desarrollo");
+
+    const pasos = [
+      ["01","RECONOCE","Identifica los comportamientos que hoy fortalecen tu liderazgo y aquellos que requieren mayor atención."],
+      ["02","PRACTICA","Lleva la competencia de oportunidad a conversaciones y situaciones reales de liderazgo."],
+      ["03","EVOLUCIONA","Observa resultados, solicita feedback y convierte la práctica en un hábito sostenible."]
+    ];
+
+    pasos.forEach(function(paso,index){
+      const x = 18 + index*87;
+      aplicarFill(doc,"#FFFFFF");
+      aplicarDraw(doc,"#D9E0E8");
+      doc.roundedRect(x,51,81,58,4,4,"FD");
+      aplicarColor(doc,"#C5A028");
+      doc.setFont("helvetica","bold");
+      doc.setFontSize(18);
+      doc.text(paso[0],x+40.5,65,{align:"center"});
+      aplicarColor(doc,"#1B365D");
+      doc.setFontSize(9.5);
+      doc.text(paso[1],x+40.5,74,{align:"center"});
+      aplicarColor(doc,"#243B53");
+      doc.setFont("helvetica","normal");
+      doc.setFontSize(7.7);
+      const stepLines = doc.splitTextToSize(paso[2],69);
+      doc.text(stepLines,x+6,84);
+    });
+
+    aplicarFill(doc,"#1B365D");
+    doc.roundedRect(18,124,261,35,4,4,"F");
+    aplicarColor(doc,"#FFFFFF");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(13);
+    doc.text("El liderazgo no se define solamente por lo que sabes.",148.5,138,{align:"center"});
+    doc.text("Se demuestra en lo que haces con ese conocimiento.",148.5,148,{align:"center"});
+
+    aplicarColor(doc,"#00968F");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(11);
+    doc.text("GROWTH PATH ACADEMY",148.5,174,{align:"center"});
+    aplicarColor(doc,"#6B7280");
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(7.5);
+    doc.text("Knowledge · Leadership · Business Growth",148.5,181,{align:"center"});
+    doc.text("Documento de referencia para desarrollo. Los resultados corresponden a la evaluación realizada.",148.5,188,{align:"center"});
+
+    dibujarPieReporte(doc,4);
+
+    const safeName = nombre
+      .normalize("NFD")
+      .replace(/[\\u0300-\\u036f]/g,"")
+      .replace(/[^a-zA-Z0-9]+/g,"-")
+      .replace(/^-+|-+$/g,"");
+
+    doc.save("Reporte-Lideres-Despiertan-Talento-" + (safeName || "Participante") + ".pdf");
+
+    setReportStatus("Reporte generado correctamente.","success");
+
+  }catch(error){
+
+    console.error(error);
+    setReportStatus(error.message || "No fue posible generar el reporte.","error");
+
+  }
+
+}
+
+
+downloadReportButton.addEventListener(
+  "click",
+  function(){
+    generarReportePDF();
+  }
+);
 
 
 /****************************************************************
