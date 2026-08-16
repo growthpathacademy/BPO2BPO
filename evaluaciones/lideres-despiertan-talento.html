@@ -1619,9 +1619,15 @@ function mostrarResultado(
   }
 
 
+  /*
+   * Mostrar nombres amigables cuando el API los devuelve.
+   * Si por alguna razón no vienen, usar el ID como respaldo.
+   */
+
   document.getElementById(
     "resultLevel"
   ).textContent =
+    data.nivel_nombre ||
     data.nivel_id ||
     "--";
 
@@ -1629,6 +1635,7 @@ function mostrarResultado(
   document.getElementById(
     "resultProfile"
   ).textContent =
+    data.perfil_nombre ||
     data.perfil_id ||
     "--";
 
@@ -1636,6 +1643,7 @@ function mostrarResultado(
   document.getElementById(
     "resultDimensionStrength"
   ).textContent =
+    data.dimension_fortaleza_nombre ||
     data.dimension_fortaleza_id ||
     "--";
 
@@ -1643,6 +1651,7 @@ function mostrarResultado(
   document.getElementById(
     "resultDimensionOpportunity"
   ).textContent =
+    data.dimension_oportunidad_nombre ||
     data.dimension_oportunidad_id ||
     "--";
 
@@ -1650,6 +1659,7 @@ function mostrarResultado(
   document.getElementById(
     "resultCompetenceStrength"
   ).textContent =
+    data.competencia_fortaleza_nombre ||
     data.competencia_fortaleza_id ||
     "--";
 
@@ -1657,6 +1667,7 @@ function mostrarResultado(
   document.getElementById(
     "resultCompetenceOpportunity"
   ).textContent =
+    data.competencia_oportunidad_nombre ||
     data.competencia_oportunidad_id ||
     "--";
 
