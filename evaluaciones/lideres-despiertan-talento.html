@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Líderes que Despiertan Talento | Growth Path Academy</title>
+  <meta name="description" content="Evaluación de liderazgo de Growth Path Academy. Descubre fortalezas y oportunidades para seguir desarrollando tu liderazgo.">
+
+  <style>
+    :root{
+      --navy:#1B365D;
+      --navy-dark:#0B1F3A;
+      --teal:#00968F;
+      --sky:#5BC2E7;
+      --gold:#C5A028;
+      --gray:#6B7280;
+      --light:#F5F7FA;
+      --white:#FFFFFF;
+      --border:#D9E0E8;
+      --success:#16845B;
+      --danger:#B42318;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--light);
+      color:#1F2937;
+      line-height:1.5;
+    }
+
+    .topbar{
+      height:7px;
+      background:linear-gradient(90deg,var(--gold) 0 7%,var(--navy) 7% 72%,var(--teal) 72% 88%,var(--sky) 88% 100%);
+    }
+
+    .container{
+      width:min(960px,calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    header{
+      background:var(--white);
+      border-bottom:1px solid var(--border);
+    }
+
+    .header-inner{
+      min-height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      color:var(--navy);
+      font-weight:800;
+      letter-spacing:.2px;
+      font-size:18px;
+    }
+
+    .brand span{
+      display:block;
+      color:var(--teal);
+      font-size:12px;
+      font-weight:600;
+      margin-top:2px;
+    }
+
+    .badge{
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:8px 14px;
+      color:var(--navy);
+      font-size:13px;
+      background:#fff;
+      white-space:nowrap;
+    }
+
+    main{padding:38px 0 60px}
+
+    .hero{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:38px;
+      box-shadow:0 8px 28px rgba(11,31,58,.06);
+      margin-bottom:22px;
+    }
+
+    .eyebrow{
+      color:var(--teal);
+      font-size:13px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:8px;
+    }
+
+    h1{
+      color:var(--navy);
+      margin:0 0 12px;
+      font-size:clamp(30px,5vw,46px);
+      line-height:1.1;
+    }
+
+    .hero p{
+      max-width:760px;
+      color:#4B5563;
+      font-size:17px;
+      margin:0;
+    }
+
+    .facts{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .fact{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:15px;
+      background:#FBFCFD;
+    }
+
+    .fact strong{
+      display:block;
+      color:var(--navy);
+      font-size:18px;
+    }
+
+    .fact span{
+      color:var(--gray);
+      font-size:12px;
+    }
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:30px;
+      margin-bottom:20px;
+      box-shadow:0 6px 20px rgba(11,31,58,.04);
+    }
+
+    .card h2{
+      margin:0 0 8px;
+      color:var(--navy);
+      font-size:24px;
+    }
+
+    .muted{
+      color:var(--gray);
+      font-size:14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    label{
+      display:block;
+      color:var(--navy);
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    input,select{
+      width:100%;
+      border:1px solid #C9D2DE;
+      border-radius:10px;
+      padding:12px 13px;
+      font-size:15px;
+      background:#fff;
+      outline:none;
+      transition:.15s;
+    }
+
+    input:focus,select:focus{
+      border-color:var(--teal);
+      box-shadow:0 0 0 3px rgba(0,150,143,.10);
+    }
+
+    .field{margin-bottom:2px}
+
+    .consent{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin-top:18px;
+      font-size:13px;
+      color:#4B5563;
+    }
+
+    .consent input{
+      width:auto;
+      margin-top:3px;
+    }
+
+    button{
+      border:0;
+      border-radius:10px;
+      padding:13px 20px;
+      font-size:15px;
+      font-weight:800;
+      cursor:pointer;
+      transition:.15s;
+    }
+
+    .primary{
+      background:var(--navy);
+      color:#fff;
+    }
+
+    .primary:hover{background:var(--navy-dark)}
+    .primary:disabled{opacity:.55;cursor:not-allowed}
+
+    .secondary{
+      background:#EAF6F5;
+      color:var(--teal);
+    }
+
+    .progress-wrap{
+      margin-bottom:22px;
+    }
+
+    .progress-info{
+      display:flex;
+      justify-content:space-between;
+      color:var(--gray);
+      font-size:13px;
+      margin-bottom:7px;
+    }
+
+    .progress{
+      height:8px;
+      background:#E7ECF2;
+      border-radius:999px;
+      overflow:hidden;
+    }
+
+    .progress-bar{
+      height:100%;
+      width:0;
+      background:var(--teal);
+      transition:.25s;
+    }
+
+    .question-number{
+      color:var(--teal);
+      font-size:13px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.7px;
+      margin-bottom:8px;
+    }
+
+    .question-text{
+      color:var(--navy);
+      font-size:22px;
+      font-weight:750;
+      line-height:1.3;
+      margin-bottom:20px;
+    }
+
+    .options{
+      display:grid;
+      gap:10px;
+    }
+
+    .option{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:15px;
+      cursor:pointer;
+      background:#fff;
+    }
+
+    .option:hover{
+      border-color:var(--teal);
+      background:#FBFEFE;
+    }
+
+    .option.selected{
+      border-color:var(--teal);
+      background:#EFFAF9;
+      box-shadow:0 0 0 2px rgba(0,150,143,.08);
+    }
+
+    .option input{
+      width:auto;
+      margin-top:4px;
+      accent-color:var(--teal);
+    }
+
+    .option-letter{
+      min-width:25px;
+      color:var(--teal);
+      font-weight:800;
+    }
+
+    .quiz-nav{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .error{
+      display:none;
+      margin:14px 0;
+      padding:12px 14px;
+      border-radius:10px;
+      color:var(--danger);
+      background:#FEF3F2;
+      border:1px solid #FECACA;
+      font-size:14px;
+    }
+
+    .loading{
+      text-align:center;
+      padding:45px 20px;
+      color:var(--gray);
+    }
+
+    .spinner{
+      width:34px;
+      height:34px;
+      margin:0 auto 14px;
+      border:4px solid #DDE6ED;
+      border-top-color:var(--teal);
+      border-radius:50%;
+      animation:spin .8s linear infinite;
+    }
+
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .result-score{
+      text-align:center;
+      padding:18px 0 25px;
+    }
+
+    .score{
+      font-size:62px;
+      font-weight:900;
+      color:var(--navy);
+      line-height:1;
+    }
+
+    .approved{
+      color:var(--success);
+      font-weight:800;
+      font-size:17px;
+    }
+
+    .not-approved{
+      color:var(--danger);
+      font-weight:800;
+      font-size:17px;
+    }
+
+    .result-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .result-item{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:15px;
+    }
+
+    .result-item small{
+      display:block;
+      color:var(--gray);
+      margin-bottom:4px;
+    }
+
+    .result-item strong{
+      color:var(--navy);
+    }
+
+    footer{
+      text-align:center;
+      color:var(--gray);
+      font-size:12px;
+      padding:25px 0 40px;
+    }
+
+    .hidden{display:none!important}
+
+    @media(max-width:700px){
+      .header-inner{min-height:74px}
+      .badge{display:none}
+      .hero,.card{padding:22px}
+      .facts,.grid,.result-grid{grid-template-columns:1fr}
+      .question-text{font-size:19px}
+      .quiz-nav{flex-direction:column}
+      .quiz-nav button{width:100%}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="topbar"></div>
+
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      Growth Path Academy
+      <span>Desarrollo de líderes BPO</span>
+    </div>
+    <div class="badge">Líderes que Despiertan Talento</div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- INTRODUCCIÓN -->
+  <section id="introSection" class="hero">
+    <div class="eyebrow">Evaluación de liderazgo</div>
+    <h1>Líderes que Despiertan Talento</h1>
+    <p>
+      Una evaluación para reflexionar sobre tu forma de liderar,
+      identificar fortalezas y reconocer oportunidades de desarrollo.
+      El banco contiene 60 preguntas; en cada intento se seleccionan
+      20 preguntas de forma aleatoria.
+    </p>
+
+    <div class="facts">
+      <div class="fact">
+        <strong>20</strong>
+        <span>Preguntas por intento</span>
+      </div>
+      <div class="fact">
+        <strong>80%</strong>
+        <span>Porcentaje de aprobación</span>
+      </div>
+      <div class="fact">
+        <strong>2</strong>
+        <span>Intentos máximos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATOS PARTICIPANTE -->
+  <section id="participantSection" class="card">
+    <h2>Comencemos</h2>
+    <p class="muted">
+      Completa tus datos para iniciar la evaluación.
+    </p>
+
+    <div id="participantError" class="error"></div>
+
+    <form id="participantForm">
+
+      <div class="grid">
+
+        <div class="field">
+          <label for="nombre">Nombre completo *</label>
+          <input id="nombre" required autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="email">Correo electrónico *</label>
+          <input id="email" type="email" required autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input id="telefono" autocomplete="tel">
+        </div>
+
+        <div class="field">
+          <label for="empresa">Empresa</label>
+          <input id="empresa" autocomplete="organization">
+        </div>
+
+        <div class="field">
+          <label for="pais">País</label>
+          <input id="pais" value="Colombia">
+        </div>
+
+        <div class="field">
+          <label for="ciudad">Ciudad</label>
+          <input id="ciudad">
+        </div>
+
+      </div>
+
+      <label class="consent">
+        <input id="consentimiento" type="checkbox" required>
+        <span>
+          Autorizo el tratamiento de mis datos personales para los fines
+          relacionados con esta evaluación y el proceso de desarrollo.
+        </span>
+      </label>
+
+      <button id="startButton" class="primary" type="submit" style="margin-top:22px">
+        Iniciar evaluación
+      </button>
+
+    </form>
+  </section>
+
+  <!-- CARGANDO -->
+  <section id="loadingSection" class="card hidden">
+    <div class="loading">
+      <div class="spinner"></div>
+      <strong>Preparando tu evaluación...</strong>
+      <p class="muted">Estamos seleccionando aleatoriamente tus 20 preguntas.</p>
+    </div>
+  </section>
+
+  <!-- EVALUACIÓN -->
+  <section id="quizSection" class="card hidden">
+
+    <div class="progress-wrap">
+      <div class="progress-info">
+        <span id="progressText">Pregunta 1 de 20</span>
+        <span id="answeredText">0 respondidas</span>
+      </div>
+      <div class="progress">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+    </div>
+
+    <div id="quizError" class="error"></div>
+
+    <div id="questionContainer"></div>
+
+    <div class="quiz-nav">
+      <button id="previousButton" class="secondary" type="button">
+        Anterior
+      </button>
+
+      <button id="nextButton" class="primary" type="button">
+        Siguiente
+      </button>
+
+      <button id="finishButton" class="primary hidden" type="button">
+        Finalizar evaluación
+      </button>
+    </div>
+
+  </section>
+
+  <!-- RESULTADO -->
+  <section id="resultSection" class="card hidden">
+    <div class="eyebrow">Resultado</div>
+    <h2>Tu evaluación ha finalizado</h2>
+
+    <div class="result-score">
+      <div id="score" class="score">--%</div>
+      <div id="approval"></div>
+      <p id="scoreDetail" class="muted"></p>
+    </div>
+
+    <div class="result-grid">
+      <div class="result-item">
+        <small>Nivel</small>
+        <strong id="resultLevel">--</strong>
+      </div>
+
+      <div class="result-item">
+        <small>Perfil</small>
+        <strong id="resultProfile">--</strong>
+      </div>
+
+      <div class="result-item">
+        <small>Dimensión fortaleza</small>
+        <strong id="resultDimensionStrength">--</strong>
+      </div>
+
+      <div class="result-item">
+        <small>Dimensión oportunidad</small>
+        <strong id="resultDimensionOpportunity">--</strong>
+      </div>
+
+      <div class="result-item">
+        <small>Competencia fortaleza</small>
+        <strong id="resultCompetenceStrength">--</strong>
+      </div>
+
+      <div class="result-item">
+        <small>Competencia oportunidad</small>
+        <strong id="resultCompetenceOpportunity">--</strong>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:22px">
+      Tu resultado ha sido registrado correctamente.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Growth Path Academy · Líderes que Despiertan Talento
+</footer>
+
+
+<script>
+/****************************************************************
+ * CONFIGURACIÓN
+ ****************************************************************/
+
+const CONFIG = {
+
+  /*
+   * IMPORTANTE:
+   * Reemplaza únicamente esta URL por la URL /exec
+   * de tu implementación de Google Apps Script.
+   *
+   * NO uses la URL de edición de Apps Script.
+   */
+  API_URL: "https://script.google.com/macros/s/AKfycbwTH6btfKOh78sGuldXbAz1OGM7U9s1rrRBe2xMpIbplG0reni_NUqGNAtWcu5q96LhTA/exec",
+
+  evaluacionId: "EVA001",
+
+  productoId: "PROD001",
+
+  preguntasPorIntento: 20
+
+};
+
+
+/****************************************************************
+ * ESTADO
+ ****************************************************************/
+
+let questions = [];
+
+let currentQuestion = 0;
+
+let answers = {};
+
+let participant = {};
+
+let evaluationStartTime = null;
+
+
+/****************************************************************
+ * ELEMENTOS
+ ****************************************************************/
+
+const introSection =
+  document.getElementById("introSection");
+
+const participantSection =
+  document.getElementById("participantSection");
+
+const loadingSection =
+  document.getElementById("loadingSection");
+
+const quizSection =
+  document.getElementById("quizSection");
+
+const resultSection =
+  document.getElementById("resultSection");
+
+const participantForm =
+  document.getElementById("participantForm");
+
+const questionContainer =
+  document.getElementById("questionContainer");
+
+const previousButton =
+  document.getElementById("previousButton");
+
+const nextButton =
+  document.getElementById("nextButton");
+
+const finishButton =
+  document.getElementById("finishButton");
+
+const progressText =
+  document.getElementById("progressText");
+
+const answeredText =
+  document.getElementById("answeredText");
+
+const progressBar =
+  document.getElementById("progressBar");
+
+const participantError =
+  document.getElementById("participantError");
+
+const quizError =
+  document.getElementById("quizError");
+
+
+/****************************************************************
+ * VALIDAR CONFIGURACIÓN
+ ****************************************************************/
+
+function apiConfigurada(){
+
+  return (
+    CONFIG.API_URL &&
+    CONFIG.API_URL.indexOf("/exec") !== -1
+  );
+
+}
+
+
+/****************************************************************
+ * MOSTRAR ERROR
+ ****************************************************************/
+
+function mostrarError(elemento, mensaje){
+
+  elemento.textContent =
+    mensaje;
+
+  elemento.style.display =
+    "block";
+
+}
+
+
+function ocultarError(elemento){
+
+  elemento.textContent =
+    "";
+
+  elemento.style.display =
+    "none";
+
+}
+
+
+/****************************************************************
+ * FORMULARIO PARTICIPANTE
+ ****************************************************************/
+
+participantForm.addEventListener(
+  "submit",
+  async function(event){
+
+    event.preventDefault();
+
+    ocultarError(
+      participantError
+    );
+
+
+    if(!apiConfigurada()){
+
+      mostrarError(
+        participantError,
+        "La evaluación aún no está conectada a Google Apps Script. Debes colocar la URL /exec en CONFIG.API_URL."
+      );
+
+      return;
+
+    }
+
+
+    if(
+      !document.getElementById(
+        "consentimiento"
+      ).checked
+    ){
+
+      mostrarError(
+        participantError,
+        "Debes aceptar el tratamiento de datos para continuar."
+      );
+
+      return;
+
+    }
+
+
+    participant = {
+
+      nombre:
+        document.getElementById(
+          "nombre"
+        ).value.trim(),
+
+      email:
+        document.getElementById(
+          "email"
+        ).value.trim(),
+
+      telefono:
+        document.getElementById(
+          "telefono"
+        ).value.trim(),
+
+      empresa:
+        document.getElementById(
+          "empresa"
+        ).value.trim(),
+
+      pais:
+        document.getElementById(
+          "pais"
+        ).value.trim(),
+
+      ciudad:
+        document.getElementById(
+          "ciudad"
+        ).value.trim(),
+
+      consentimiento:
+        "SI"
+
+    };
+
+
+    if(
+      !participant.nombre ||
+      !participant.email
+    ){
+
+      mostrarError(
+        participantError,
+        "Nombre y correo electrónico son obligatorios."
+      );
+
+      return;
+
+    }
+
+
+    await iniciarEvaluacion();
+
+  }
+);
+
+
+/****************************************************************
+ * INICIAR EVALUACIÓN
+ ****************************************************************/
+
+async function iniciarEvaluacion(){
+
+  participantSection.classList.add(
+    "hidden"
+  );
+
+  introSection.classList.add(
+    "hidden"
+  );
+
+  loadingSection.classList.remove(
+    "hidden"
+  );
+
+
+  try{
+
+    const response =
+      await fetch(
+        CONFIG.API_URL +
+        "?action=evaluacion&t=" +
+        Date.now(),
+        {
+          method:"GET",
+          cache:"no-store"
+        }
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        "No fue posible conectar con el servidor."
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    if(!data.ok){
+
+      throw new Error(
+        data.mensaje ||
+        "No fue posible cargar la evaluación."
+      );
+
+    }
+
+
+    if(
+      !Array.isArray(data.preguntas) ||
+      data.preguntas.length !==
+      CONFIG.preguntasPorIntento
+    ){
+
+      throw new Error(
+        "El servidor no devolvió exactamente 20 preguntas."
+      );
+
+    }
+
+
+    /*
+     * IMPORTANTE:
+     *
+     * Las 20 preguntas ya fueron seleccionadas
+     * aleatoriamente por Apps Script.
+     *
+     * La landing NO vuelve a seleccionar.
+     */
+
+    questions =
+      data.preguntas;
+
+
+    answers = {};
+
+    currentQuestion = 0;
+
+
+    evaluationStartTime =
+      new Date().toISOString();
+
+
+    loadingSection.classList.add(
+      "hidden"
+    );
+
+    quizSection.classList.remove(
+      "hidden"
+    );
+
+
+    renderQuestion();
+
+
+  }catch(error){
+
+    loadingSection.classList.add(
+      "hidden"
+    );
+
+    participantSection.classList.remove(
+      "hidden"
+    );
+
+    introSection.classList.remove(
+      "hidden"
+    );
+
+
+    mostrarError(
+      participantError,
+      error.message
+    );
+
+  }
+
+}
+
+
+/****************************************************************
+ * RENDERIZAR PREGUNTA
+ ****************************************************************/
+
+function renderQuestion(){
+
+  ocultarError(
+    quizError
+  );
+
+
+  const question =
+    questions[
+      currentQuestion
+    ];
+
+
+  if(!question){
+
+    return;
+
+  }
+
+
+  progressText.textContent =
+    "Pregunta " +
+    (currentQuestion + 1) +
+    " de " +
+    questions.length;
+
+
+  const answeredCount =
+    Object.keys(
+      answers
+    ).length;
+
+
+  answeredText.textContent =
+    answeredCount +
+    " respondidas";
+
+
+  progressBar.style.width =
+    (
+      (
+        currentQuestion + 1
+      ) /
+      questions.length *
+      100
+    ) +
+    "%";
+
+
+  let html = "";
+
+
+  html +=
+    '<div class="question-number">' +
+    'Pregunta ' +
+    String(currentQuestion + 1).padStart(2,"0") +
+    '</div>';
+
+
+  html +=
+    '<div class="question-text">' +
+    escapeHTML(
+      question.pregunta_texto
+    ) +
+    '</div>';
+
+
+  html +=
+    '<div class="options">';
+
+
+  question.opciones.forEach(
+    function(option,index){
+
+      const checked =
+        answers[
+          question.pregunta_id
+        ] ===
+        option.opcion_id;
+
+
+      html +=
+        '<label class="option ' +
+        (
+          checked
+            ? "selected"
+            : ""
+        ) +
+        '" data-option="' +
+        escapeAttribute(
+          option.opcion_id
+        ) +
+        '">';
+
+
+      html +=
+        '<input type="radio" ' +
+        'name="question" ' +
+        'value="' +
+        escapeAttribute(
+          option.opcion_id
+        ) +
+        '" ' +
+        (
+          checked
+            ? "checked"
+            : ""
+        ) +
+        '>';
+
+
+      html +=
+        '<span class="option-letter">' +
+        String.fromCharCode(
+          65 + index
+        ) +
+        '</span>';
+
+
+      html +=
+        '<span>' +
+        escapeHTML(
+          option.opcion_texto
+        ) +
+        '</span>';
+
+
+      html +=
+        '</label>';
+
+    }
+  );
+
+
+  html +=
+    '</div>';
+
+
+  questionContainer.innerHTML =
+    html;
+
+
+  document
+    .querySelectorAll(
+      ".option"
+    )
+    .forEach(
+      function(option){
+
+        option.addEventListener(
+          "click",
+          function(){
+
+            const radio =
+              option.querySelector(
+                "input"
+              );
+
+            radio.checked =
+              true;
+
+
+            document
+              .querySelectorAll(
+                ".option"
+              )
+              .forEach(
+                function(x){
+                  x.classList.remove(
+                    "selected"
+                  );
+                }
+              );
+
+
+            option.classList.add(
+              "selected"
+            );
+
+
+            answers[
+              question.pregunta_id
+            ] =
+              radio.value;
+
+
+            answeredText.textContent =
+              Object.keys(
+                answers
+              ).length +
+              " respondidas";
+
+          }
+        );
+
+      }
+    );
+
+
+  previousButton.disabled =
+    currentQuestion === 0;
+
+
+  if(
+    currentQuestion ===
+    questions.length - 1
+  ){
+
+    nextButton.classList.add(
+      "hidden"
+    );
+
+    finishButton.classList.remove(
+      "hidden"
+    );
+
+  }else{
+
+    nextButton.classList.remove(
+      "hidden"
+    );
+
+    finishButton.classList.add(
+      "hidden"
+    );
+
+  }
+
+}
+
+
+/****************************************************************
+ * SIGUIENTE
+ ****************************************************************/
+
+nextButton.addEventListener(
+  "click",
+  function(){
+
+    const question =
+      questions[
+        currentQuestion
+      ];
+
+
+    if(
+      !answers[
+        question.pregunta_id
+      ]
+    ){
+
+      mostrarError(
+        quizError,
+        "Selecciona una respuesta antes de continuar."
+      );
+
+      return;
+
+    }
+
+
+    if(
+      currentQuestion <
+      questions.length - 1
+    ){
+
+      currentQuestion++;
+
+      renderQuestion();
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+    }
+
+  }
+);
+
+
+/****************************************************************
+ * ANTERIOR
+ ****************************************************************/
+
+previousButton.addEventListener(
+  "click",
+  function(){
+
+    if(
+      currentQuestion > 0
+    ){
+
+      currentQuestion--;
+
+      renderQuestion();
+
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+
+    }
+
+  }
+);
+
+
+/****************************************************************
+ * FINALIZAR
+ ****************************************************************/
+
+finishButton.addEventListener(
+  "click",
+  async function(){
+
+    ocultarError(
+      quizError
+    );
+
+
+    /*
+     * Validar todas las preguntas.
+     */
+
+    const faltantes =
+      questions.filter(
+        function(q){
+          return !answers[
+            q.pregunta_id
+          ];
+        }
+      );
+
+
+    if(
+      faltantes.length > 0
+    ){
+
+      mostrarError(
+        quizError,
+        "Aún tienes " +
+        faltantes.length +
+        " pregunta(s) sin responder."
+      );
+
+      return;
+
+    }
+
+
+    const confirmar =
+      window.confirm(
+        "Has respondido las 20 preguntas. ¿Deseas finalizar la evaluación?"
+      );
+
+
+    if(!confirmar){
+
+      return;
+
+    }
+
+
+    await enviarEvaluacion();
+
+  }
+);
+
+
+/****************************************************************
+ * ENVIAR EVALUACIÓN
+ ****************************************************************/
+
+async function enviarEvaluacion(){
+
+  finishButton.disabled =
+    true;
+
+  previousButton.disabled =
+    true;
+
+  nextButton.disabled =
+    true;
+
+
+  finishButton.textContent =
+    "Guardando resultado...";
+
+
+  try{
+
+    const respuestas =
+      questions.map(
+        function(question){
+
+          return {
+
+            pregunta_id:
+              question.pregunta_id,
+
+            opcion_id:
+              answers[
+                question.pregunta_id
+              ],
+
+            tiempo_segundos:
+              0
+
+          };
+
+        }
+      );
+
+
+    const payload = {
+
+      evaluacion_id:
+        CONFIG.evaluacionId,
+
+      producto_id:
+        CONFIG.productoId,
+
+      fecha_inicio:
+        evaluationStartTime,
+
+      participante:
+        participant,
+
+      respuestas:
+        respuestas
+
+    };
+
+
+    const response =
+      await fetch(
+        CONFIG.API_URL +
+        "?action=calificar",
+        {
+
+          method:"POST",
+
+          headers:{
+            "Content-Type":
+              "text/plain;charset=utf-8"
+          },
+
+          body:
+            JSON.stringify(
+              payload
+            )
+
+        }
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        "El servidor rechazó el envío."
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    if(!data.ok){
+
+      throw new Error(
+        data.mensaje ||
+        "No fue posible guardar la evaluación."
+      );
+
+    }
+
+
+    mostrarResultado(
+      data
+    );
+
+
+  }catch(error){
+
+    finishButton.disabled =
+      false;
+
+    previousButton.disabled =
+      false;
+
+    nextButton.disabled =
+      false;
+
+    finishButton.textContent =
+      "Finalizar evaluación";
+
+
+    mostrarError(
+      quizError,
+      error.message
+    );
+
+  }
+
+}
+
+
+/****************************************************************
+ * MOSTRAR RESULTADO
+ ****************************************************************/
+
+function mostrarResultado(
+  data
+){
+
+  quizSection.classList.add(
+    "hidden"
+  );
+
+  resultSection.classList.remove(
+    "hidden"
+  );
+
+
+  document.getElementById(
+    "score"
+  ).textContent =
+    Number(
+      data.puntaje_porcentaje
+    ).toFixed(1) +
+    "%";
+
+
+  document.getElementById(
+    "scoreDetail"
+  ).textContent =
+    "Puntaje obtenido: " +
+    data.puntaje_total +
+    " de 20";
+
+
+  const approval =
+    document.getElementById(
+      "approval"
+    );
+
+
+  if(
+    String(data.aprobado)
+      .toUpperCase() ===
+    "SI"
+  ){
+
+    approval.className =
+      "approved";
+
+    approval.textContent =
+      "Evaluación aprobada";
+
+  }else{
+
+    approval.className =
+      "not-approved";
+
+    approval.textContent =
+      "Evaluación no aprobada";
+
+  }
+
+
+  document.getElementById(
+    "resultLevel"
+  ).textContent =
+    data.nivel_id ||
+    "--";
+
+
+  document.getElementById(
+    "resultProfile"
+  ).textContent =
+    data.perfil_id ||
+    "--";
+
+
+  document.getElementById(
+    "resultDimensionStrength"
+  ).textContent =
+    data.dimension_fortaleza_id ||
+    "--";
+
+
+  document.getElementById(
+    "resultDimensionOpportunity"
+  ).textContent =
+    data.dimension_oportunidad_id ||
+    "--";
+
+
+  document.getElementById(
+    "resultCompetenceStrength"
+  ).textContent =
+    data.competencia_fortaleza_id ||
+    "--";
+
+
+  document.getElementById(
+    "resultCompetenceOpportunity"
+  ).textContent =
+    data.competencia_oportunidad_id ||
+    "--";
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/****************************************************************
+ * SEGURIDAD BÁSICA DE TEXTO
+ ****************************************************************/
+
+function escapeHTML(value){
+
+  return String(
+    value ?? ""
+  )
+  .replace(
+    /&/g,
+    "&amp;"
+  )
+  .replace(
+    /</g,
+    "&lt;"
+  )
+  .replace(
+    />/g,
+    "&gt;"
+  )
+  .replace(
+    /"/g,
+    "&quot;"
+  )
+  .replace(
+    /'/g,
+    "&#039;"
+  );
+
+}
+
+
+function escapeAttribute(value){
+
+  return escapeHTML(
+    value
+  );
+
+}
+
+
+/****************************************************************
+ * EVITAR SALIR ACCIDENTALMENTE
+ ****************************************************************/
+
+window.addEventListener(
+  "beforeunload",
+  function(event){
+
+    if(
+      !quizSection.classList.contains(
+        "hidden"
+      ) &&
+      !resultSection.classList.contains(
+        "hidden"
+      )
+    ){
+
+      event.preventDefault();
+
+      event.returnValue = "";
+
+    }
+
+  }
+);
+
+</script>
+
+</body>
+</html>
