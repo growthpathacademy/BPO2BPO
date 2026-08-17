@@ -469,6 +469,30 @@
       background:#4B5563;
     }
 
+    .collection-recommendation{
+      margin-top:22px;
+      padding:18px 20px;
+      border:1px solid #D9E0E8;
+      border-radius:12px;
+      background:#F5F7FA;
+      text-align:center;
+    }
+    .collection-recommendation strong{
+      color:#1B365D;
+      display:block;
+      margin-bottom:6px;
+    }
+    .collection-recommendation p{
+      margin:0 0 10px;
+      color:#6B7280;
+    }
+    .collection-recommendation a{
+      color:#00968F;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .collection-recommendation a:hover{ text-decoration:underline; }
+
     .report-status{
       text-align:center;
       margin-top:12px;
@@ -716,6 +740,14 @@
       </div>
     </div>
 
+    <div class="collection-recommendation">
+      <strong>¿Quieres seguir desarrollando tus habilidades de liderazgo?</strong>
+      <p>Conoce la colección de formación recomendada por Growth Path Academy.</p>
+      <a href="https://go.hotmart.com/M107178772S" target="_blank" rel="noopener noreferrer">
+        Ver la colección →
+      </a>
+    </div>
+
     <p class="muted" style="margin-top:22px">
       Tu resultado ha sido registrado correctamente.
     </p>
@@ -767,7 +799,9 @@ const CONFIG = {
 
   productoId: "PROD001",
 
-  preguntasPorIntento: 20
+  preguntasPorIntento: 20,
+
+  coleccionURL: "https://go.hotmart.com/M107178772S"
 
 };
 
@@ -2203,6 +2237,11 @@ function generarReportePDF(){
     doc.text("Knowledge · Leadership · Business Growth",148.5,181,{align:"center"});
     doc.text("Documento de referencia para desarrollo. Los resultados corresponden a la evaluación realizada.",148.5,188,{align:"center"});
 
+    aplicarColor(doc,"#00968F");
+    doc.setFont("helvetica","bold");
+    doc.setFontSize(8.5);
+    doc.textWithLink("Conoce la colección de formación de Growth Path Academy →",148.5,202,{url:CONFIG.coleccionURL,align:"center"});
+
     dibujarPieReporte(doc,4);
 
     const safeName = nombre
@@ -2385,20 +2424,16 @@ if(finishButtonResult){
       try{
 
         if(window.opener && !window.opener.closed){
-
           window.close();
           return;
-
         }
 
-        if(window.history.length > 1){
+        // Un navegador puede bloquear el cierre si esta pestaña no fue abierta por script.
+        window.close();
 
-          window.history.back();
-          return;
-
-        }
-
-        window.location.replace("about:blank");
+        setTimeout(function(){
+          alert("El navegador no permite que una página cierre esta pestaña. Puedes cerrarla con la X del navegador.");
+        },150);
 
       }catch(error){
 
