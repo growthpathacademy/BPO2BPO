@@ -1,0 +1,172 @@
+/* ==========================================================
+   Landing eBook — El Dueño de tus Decisiones — v2 (sales page)
+   ========================================================== */
+
+/* ---------- Top bar (sin menú) ---------- */
+.lp-topbar{background:var(--navy); position:sticky; top:0; z-index:100; border-bottom:1px solid rgba(255,255,255,.08);}
+.lp-topbar .nav-wrap{max-width:var(--maxw); margin:0 auto; padding:12px 28px; display:flex; align-items:center; justify-content:space-between; min-height:64px;}
+.lp-topbar .brand img{height:40px; width:auto; display:block;}
+.lp-topbar .btn{white-space:nowrap;}
+
+/* ---------- Hero ---------- */
+.book-hero{
+  background:
+    radial-gradient(1000px 560px at 88% -12%, rgba(79,195,247,0.18), transparent 60%),
+    radial-gradient(700px 500px at 10% 110%, rgba(197,160,40,0.12), transparent 60%),
+    linear-gradient(155deg, var(--navy) 0%, var(--navy-deep) 65%, var(--navy-ink) 100%);
+  color:#fff; padding:60px 0 68px; overflow:hidden;
+}
+.book-hero-grid{display:grid; grid-template-columns:1.05fr .8fr; gap:56px; align-items:center;}
+.hero-badge{
+  display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.2); color:var(--sky); font-size:12px; font-weight:700;
+  letter-spacing:.05em; padding:7px 16px; border-radius:100px; margin-bottom:18px;
+}
+.book-hero h1{color:#fff; font-size:42px; line-height:1.12; font-weight:800; margin-bottom:14px;}
+.book-hero .subtitle{color:var(--sky); font-size:19px; font-weight:600; line-height:1.4; margin-bottom:18px;}
+.book-hero p.lead{color:#c9d4e4; font-size:15.5px; max-width:520px; margin-bottom:30px; line-height:1.7;}
+.book-hero .hero-ctas{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:30px;}
+.book-hero .btn-gold{box-shadow:0 14px 30px rgba(197,160,40,.35);}
+.book-hero .trust-row{display:flex; flex-wrap:wrap; gap:22px; border-top:1px solid rgba(255,255,255,.14); padding-top:22px;}
+.book-hero .trust-item{display:flex; align-items:center; gap:9px; font-size:12.5px; color:#dbe3ef; max-width:210px;}
+.book-hero .trust-item .ic{
+  width:32px; height:32px; border-radius:9px; background:rgba(255,255,255,.08);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:15px;
+}
+.book-cover-wrap{position:relative; display:flex; justify-content:center;}
+.book-cover-wrap img{
+  width:88%; border-radius:14px; box-shadow:0 34px 70px rgba(5,12,28,.5);
+  border:1px solid rgba(255,255,255,.16); transform:rotate(1.5deg);
+}
+.book-cover-badge{
+  position:absolute; bottom:-14px; left:50%; transform:translateX(-50%);
+  background:#fff; color:var(--navy); font-weight:800; font-size:12.5px;
+  padding:10px 22px; border-radius:100px; box-shadow:0 12px 26px rgba(5,12,28,.3);
+  white-space:nowrap; display:flex; align-items:center; gap:8px;
+}
+
+/* ---------- Stats strip ---------- */
+.stats-strip{background:var(--teal); padding:22px 0;}
+.stats-strip .stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; text-align:center;}
+@media (max-width:760px){.stats-strip .stats-grid{grid-template-columns:1fr 1fr;}}
+.stats-strip .stat b{display:block; color:#fff; font-size:26px; font-weight:800;}
+.stats-strip .stat span{color:#d6f0ee; font-size:12px;}
+
+/* ---------- Preguntas espejo ---------- */
+.mirror-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px 32px;}
+@media (max-width:760px){.mirror-grid{grid-template-columns:1fr;}}
+.mirror-q{
+  display:flex; gap:12px; align-items:flex-start; font-size:15px; color:var(--navy);
+  font-weight:600; line-height:1.5; padding:14px 0; border-bottom:1px dashed var(--line);
+}
+.mirror-q .mk{color:var(--gold); font-size:18px; flex-shrink:0; line-height:1.3;}
+
+/* ---------- Resumen destacado ---------- */
+.summary-box{
+  background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff;
+  border-radius:var(--radius); padding:36px 38px;
+}
+.summary-box p{color:#dbe3ef; font-size:16px; line-height:1.8;}
+.summary-box b{color:#fff;}
+
+/* ---------- Tabla de contenido (capítulos) ---------- */
+.toc-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px;}
+.toc-card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px 24px; display:flex; gap:16px; align-items:flex-start;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.toc-card:hover{transform:translateY(-3px); box-shadow:0 16px 32px rgba(20,30,50,.09);}
+.toc-num{
+  flex-shrink:0; width:38px; height:38px; border-radius:10px; background:var(--cream);
+  color:var(--navy); font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center;
+}
+.toc-card.extra .toc-num{background:var(--teal); color:#fff;}
+.toc-card h4{font-size:15px; margin-bottom:6px; line-height:1.35;}
+.toc-card p{font-size:13px; color:var(--gray); line-height:1.55; font-style:italic;}
+
+/* ---------- Value stack (oferta) ---------- */
+.value-card{
+  background:#fff; border:2px solid var(--gold); border-radius:var(--radius);
+  padding:40px 44px; box-shadow:0 24px 50px rgba(20,30,50,.10); position:relative; overflow:hidden;
+}
+.value-card::before{
+  content:""; position:absolute; top:-30%; right:-10%; width:260px; height:260px;
+  background:radial-gradient(circle, rgba(197,160,40,.14), transparent 70%);
+}
+.value-card h3{font-size:22px; margin-bottom:20px; position:relative;}
+.value-list{list-style:none; margin:0 0 28px; padding:0; position:relative;}
+.value-list li{display:flex; gap:12px; align-items:flex-start; font-size:15px; color:var(--ink); padding:10px 0; border-bottom:1px dashed var(--line);}
+.value-list li:last-child{border-bottom:none;}
+.value-list li .chk{
+  flex-shrink:0; width:22px; height:22px; border-radius:50%; background:var(--teal); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; margin-top:1px;
+}
+.value-card .value-cta{display:flex; align-items:center; gap:18px; flex-wrap:wrap; position:relative;}
+.value-card .fine{font-size:12.5px; color:var(--gray);}
+
+/* ---------- Para quién es / no es ---------- */
+.fit-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+@media (max-width:760px){.fit-grid{grid-template-columns:1fr;}}
+.fit-card{border-radius:var(--radius); padding:28px 26px;}
+.fit-card.yes{background:#eef7f6; border:1px solid #cfe9e6;}
+.fit-card.no{background:#fbf6f2; border:1px solid #ecdccb;}
+.fit-card h4{font-size:15px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;}
+.fit-card.yes h4{color:var(--teal);}
+.fit-card.no h4{color:#a05a2c;}
+.fit-card ul{list-style:none; margin:0; padding:0;}
+.fit-card li{display:flex; gap:10px; align-items:flex-start; font-size:13.8px; color:var(--ink); padding:8px 0; line-height:1.5;}
+.fit-card.yes li .mk{color:var(--teal); font-weight:800;}
+.fit-card.no li .mk{color:#a05a2c; font-weight:800;}
+
+/* ---------- Manifesto ---------- */
+.manifesto p{color:#cbd6e6; font-size:15.5px; line-height:1.85; margin-bottom:16px;}
+.manifesto-quote{
+  border-left:3px solid var(--gold); background:rgba(255,255,255,.05);
+  padding:24px 28px; margin:28px 0; border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+}
+.manifesto-quote p{font-size:19px; font-style:italic; font-weight:600; color:#fff; margin-bottom:10px; line-height:1.55;}
+.manifesto-quote cite{font-size:12.5px; color:var(--sky); font-style:normal; font-weight:700;}
+
+/* ---------- Frases de impacto ---------- */
+.quote-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px;}
+.quote-card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px 24px 24px;
+  position:relative; transition:transform .15s ease, box-shadow .15s ease;
+}
+.quote-card:hover{transform:translateY(-3px); box-shadow:0 16px 32px rgba(20,30,50,.09);}
+.quote-card .qmark{
+  position:absolute; top:14px; right:18px; font-size:42px; font-family:Georgia,serif; color:var(--cream);
+  font-weight:800; line-height:1;
+}
+.quote-card .qn{color:var(--gold); font-size:13px; font-weight:800; letter-spacing:.06em; margin-bottom:12px; display:block; position:relative;}
+.quote-card p{font-size:14.5px; font-style:italic; color:var(--navy); font-weight:600; line-height:1.55; position:relative;}
+
+/* ---------- Autor (compacto, imagen reducida) ---------- */
+.author-card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+  padding:32px; display:flex; gap:28px; align-items:center; flex-wrap:wrap;
+}
+.author-photo-sm{
+  flex-shrink:0; width:110px; height:110px; border-radius:50%; overflow:hidden;
+  border:3px solid var(--cream); box-shadow:0 10px 24px rgba(20,30,50,.12);
+}
+.author-photo-sm img{width:100%; height:100%; object-fit:cover;}
+.author-card .txt{flex:1; min-width:240px;}
+.author-card h4{font-size:18px; margin-bottom:6px;}
+.author-card p{color:var(--gray); font-size:14px; line-height:1.65; margin-bottom:12px;}
+.author-credentials{display:flex; flex-wrap:wrap; gap:8px;}
+.author-credentials span{
+  background:var(--cream); color:var(--navy); font-size:11.5px; font-weight:700;
+  padding:5px 12px; border-radius:100px;
+}
+
+/* ---------- CTA final ---------- */
+.final-cta{
+  background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%); color:#fff;
+  border-radius:var(--radius); padding:48px 44px; text-align:center;
+}
+.final-cta .brand-line{font-size:18px; font-style:italic; color:#fff; font-weight:600; margin-bottom:10px;}
+.final-cta .fine{font-size:13px; color:#aeb9c9; max-width:480px; margin:0 auto 26px;}
+.final-cta .hero-ctas{justify-content:center;}
+.closing-line{text-align:center; font-size:12.5px; color:var(--gray-light); margin-top:26px;}
