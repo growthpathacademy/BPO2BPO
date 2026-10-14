@@ -113,6 +113,9 @@ nav.main-nav a.nav-link.active{color:var(--sky);}
   nav.main-nav a.nav-link{padding:14px 12px; border-bottom:1px solid rgba(255,255,255,.08); border-radius:0;}
   .dropdown{position:static; opacity:1; visibility:visible; transform:none; box-shadow:none; background:rgba(255,255,255,.04); display:none; margin:4px 0 8px;}
   .has-dropdown.open .dropdown{display:block;}
+  .dropdown a{color:#eef2f8;}
+  .dropdown a small{color:#a9b8cf;}
+  .dropdown a:hover{background:rgba(255,255,255,.08);}
   .nav-cta{margin:14px 0 0;}
   .nav-toggle{display:block;}
 }
